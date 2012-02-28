@@ -10,7 +10,7 @@
  * Plugin Name: Toolbar Buddy
  * Plugin URI: http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
  * Description: This plugin adds useful admin links and resources for iThemes Builder and popular PluginBuddy plugins to the WordPress Toolbar / Admin Bar.
- * Version: 1.0
+ * Version: 1.1
  * Author: David Decker - DECKERWEB
  * Author URI: http://deckerweb.de/
  * License: GPLv2

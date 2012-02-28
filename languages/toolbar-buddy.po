@@ -732,7 +732,7 @@ msgstr ""
 #. translators: plugin header field 'Version'
 #: toolbar-buddy.php:0
 #@ toolbar-buddy
-msgid "1.0"
+msgid "1.1"
 msgstr ""
 
 #: toolbar-buddy.php:69

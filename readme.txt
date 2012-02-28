@@ -1,7 +1,7 @@
 === Toolbar Buddy ===
 Contributors: daveshine
 Donate link: http://genesisthemes.de/en/donate/
-Tags: toolbar, tool bar, adminbar, admin bar, ithemes, builder, builder theme, framework, pluginbuddy, backupbuddy, loopbuddy, displaybuddy, administration, resources, links, theme, settings, manage, deckerweb
+Tags: toolbar, tool bar, adminbar, admin bar, ithemes, builder, builder theme, framework, pluginbuddy, backupbuddy, loopbuddy, displaybuddy, administration, resources, links, theme, settings, manage, deckerweb, ddwtoolbar
 Requires at least: 3.3
 Tested up to: 3.3.1
 Stable tag: 1.0
@@ -10,7 +10,7 @@ This plugin adds useful admin links and resources for iThemes Builder and popula
 
 == Description ==
 
-This **small and lightweight plugin** just adds a lot of iThemes Builder and PluginBuddy related resources to your toolbar / admin bar. Also links to all settings pages of Builder and PluginBuddy plugins are added, making life for webmasters (a.k.a. Admins and Super Admins) a lot easier. So you might just switch from the fontend of your site to the Builder 'Layouts' or adjust the schedule for 'BackupBuddy Backups' etc.
+This **small and lightweight plugin** just adds a lot of iThemes Builder and PluginBuddy related resources to your toolbar / admin bar. Also links to all settings pages of Builder and PluginBuddy plugins are added, making life for webmasters (a.k.a. Admins and Super Admins) a lot easier. So you might just switch from the frontend of your site to the Builder 'Layouts' or adjust the schedule for 'BackupBuddy Backups' etc.
 
 As the name suggests this plugin is **intended towards site admins and super admins**. The new admin bar entries will only be displayed if the current user has a proper WordPress capability originally required by Builder or the supported plugins. And yes, **Toolbar Buddy supports Multisite installs** which is especially useful for BackupBuddy... :-)
 
@@ -84,8 +84,8 @@ You must be an "Administrator" or "Super Administrator" (Multisite) in your inst
 
 *Note:* Toolbar Buddy also respects the removal of "My Theme" menu if set via "Builder" or child theme functions.php file. In this case NO Builder-specific links will be displayed!
 
-= Help, where's my original "Builder" toolbar entry? =
-Toolbar Buddy just de-activates this original item because it makes no sense to have all items doubled in your toolbar... Toolbar Buddy offers a few more links/possibilities, so I hope that's still ok with you.
+= Help, I now have two Builder-related toolbar items? =
+Toolbar Buddy items appear under "iBuddy" where the original "Builder" items just appear under "Builder". That way you can manage your current layout used by the site and its depending widget content. "iBuddy" then manages all other things... :) (Note: By user request I just decided to let both go hand in hand. Removal of original "Builder" item was disabled (and removed from plugin) by plugin version 1.1. )
 
 = Why is the main toolbar entry called "iBuddy"? =
 This is just my shortened version of the term "iThemes and PluginBuddy". I wanted it really short and unique and somewhat related to this brand so I came up with that name. I hope you like it... If not, just introduce your own wording/branding via another language file.
@@ -117,6 +117,10 @@ If you don't use BackupBuddy in your Multisite then it's better to enable Toolba
 
 == Changelog ==
 
+= 1.1 =
+* Disabled the removal of original "Builder" toolbar item - by user request!
+* Corrected/updated readme.txt file
+
 = 1.0 =
 * Initial release
 * Including support for iThemes Builder Framework
@@ -124,6 +128,9 @@ If you don't use BackupBuddy in your Multisite then it's better to enable Toolba
 * Including support for 13 plugins of PluginBuddy brand
 
 == Upgrade Notice ==
+
+= 1.1 =
+Disabled the removal of original "Builder" toolbar item - by user request! Corrected/updated readme.txt file.
 
 = 1.0 =
 Just released into the wild.

@@ -11,21 +11,8 @@
  * @link       http://twitter.com/#!/deckerweb
  *
  * @since 1.0
+ * @version 1.1
  */
-
-add_action( 'wp_before_admin_bar_render', 'ddw_tbb_remove_builder_original', 99 );
-/**
- * Remove original Builder toolbar items
- *
- * @since 1.0
- */
-function ddw_tbb_remove_builder_original() {
-
-	global $wp_admin_bar;
-
-	$wp_admin_bar->remove_menu( 'builder' );
-}
-
 
 /**
  * Check for theme support for "builder-my-theme-menu"
