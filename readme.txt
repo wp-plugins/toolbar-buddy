@@ -1,7 +1,7 @@
 === Toolbar Buddy ===
 Contributors: daveshine
 Donate link: http://genesisthemes.de/en/donate/
-Tags: toolbar, tool bar, adminbar, admin bar, ithemes, builder, builder theme, framework, pluginbuddy, backupbuddy, loopbuddy, displaybuddy, administration, resources, links, theme, settings, manage, deckerweb, ddwtoolbar
+Tags: toolbar, tool bar, adminbar, admin bar, ithemes, builder, framework, pluginbuddy, backupbuddy, loopbuddy, displaybuddy, administration, resources, links, theme, settings, manage, deckerweb, ddwtoolbar
 Requires at least: 3.3
 Tested up to: 3.3.1
 Stable tag: 1.1
@@ -71,7 +71,7 @@ As the name suggests this plugin is **intended towards site admins and super adm
 
 **Multisite install:** Yes, it's fully compatible but I recommend you to have a look in the [FAQ section here](http://wordpress.org/extend/plugins/toolbar-buddy/faq/) for more info :)
 
-For custom and update-secure language files please upload them to `/wp-content/languages/toolbar-buddy/` (just create this folder) - This enables you to use fully custom translations that won't be overridden on plugin updates. Also, complete custom English wording is possible with that, just use a language file like `toolbar-buddy-en_US.mo/.po` to achieve that.
+For custom and update-secure language files please upload them to `/wp-content/languages/toolbar-buddy/` (just create this folder) - This enables you to use fully custom translations that won't be overridden on plugin updates. Also, complete custom English wording is possible with that, just use a language file like `toolbar-buddy-en_US.mo/.po` to achieve that  (for creating one see the tools on "Other Notes")..
 
 == Frequently Asked Questions ==
 
@@ -139,7 +139,7 @@ Just released into the wild.
 
 * English - default, always included
 * German: Deutsch - immer dabei! [Download auch via deckerweb.de](http://deckerweb.de/material/sprachdateien/ithemes-und-pluginbuddy/#toolbar-buddy)
-* For custom and update-secure language files please upload them to `/wp-content/languages/toolbar-buddy/` (just create this folder) - This enables you to use fully custom translations that won't be overridden on plugin updates. Also, complete custom English wording is possible with that as well, just use a language file like `toolbar-buddy-en_US.mo/.po` to achieve that.
+* For custom and update-secure language files please upload them to `/wp-content/languages/toolbar-buddy/` (just create this folder) - This enables you to use fully custom translations that won't be overridden on plugin updates. Also, complete custom English wording is possible with that as well, just use a language file like `toolbar-buddy-en_US.mo/.po` to achieve that (for creating one see the following tools).
 
 *Note:* All my plugins are localized/ translateable by default. This is very important for all users worldwide. So please contribute your language to the plugin to make it even more useful. For translating I recommend the awesome ["Codestyling Localization" plugin](http://wordpress.org/extend/plugins/codestyling-localization/) and for validating the ["Poedit Editor"](http://www.poedit.net/), which works fine on Windows, Mac and Linux.
 
