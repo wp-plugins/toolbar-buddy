@@ -32,7 +32,7 @@
 		$ibuddy_bb_aurl_backup = network_admin_url( 'admin.php?page=pluginbuddy_backupbuddy-backup' );
 		$ibuddy_bb_aurl_backup_db = network_admin_url( 'admin.php?page=pluginbuddy_backupbuddy-backup&run_backup=db' );
 		$ibuddy_bb_aurl_backup_full = network_admin_url( 'admin.php?page=pluginbuddy_backupbuddy-backup&run_backup=full' );
-	} elseif ( !is_multisite() ) {
+	} elseif ( ! is_multisite() ) {
 		$ibuddy_bb_aurl_tools = admin_url( 'admin.php?page=pluginbuddy_backupbuddy' );
 		$ibuddy_bb_aurl_settings = admin_url( 'admin.php?page=pluginbuddy_backupbuddy-settings' );
 		$ibuddy_bb_aurl_schedule = admin_url( 'admin.php?page=pluginbuddy_backupbuddy-scheduling' );
@@ -117,7 +117,7 @@
 		/** Only for Admins & Super-Admins */
 		if ( current_user_can( 'manage_sites' ) || is_super_admin() ) {
 
-			// Multisite Main Entry
+			/** Multisite Main Entry */
 			$menu_items['backupbuddymsextras'] = array(
 				'parent' => $backupbgroup,
 				'title'  => __( 'Multsite Extras', 'toolbar-buddy' ),
@@ -125,7 +125,7 @@
 				'meta'   => array( 'title' => _x( 'Multsite Extras', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 			);
 
-			// BackupBuddy Multisite Export
+			/** BackupBuddy Multisite Export */
 			$menu_items['backupbuddymsextras-export'] = array(
 				'parent' => $backupbuddymsextras,
 				'title'  => __( 'Export Site (Beta)', 'toolbar-buddy' ),
@@ -133,7 +133,7 @@
 				'meta'   => array( 'target' => '', 'title' => _x( 'Export Site (Beta)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 			);
 
-			// BackupBuddy Multisite Duplicate
+			/** BackupBuddy Multisite Duplicate */
 			$menu_items['backupbuddymsextras-duplicate'] = array(
 				'parent' => $backupbuddymsextras,
 				'title'  => __( 'Duplicate Site (Beta)', 'toolbar-buddy' ),
@@ -146,7 +146,7 @@
 		/** Only for Super-Admins (cap: manage_sites) */
 		if ( current_user_can( 'manage_sites' ) ) {
 
-			// BackupBuddy Multisite Import
+			/** BackupBuddy Multisite Import */
 			$menu_items['backupbuddymsextras-import'] = array(
 				'parent' => $backupbuddymsextras,
 				'title'  => __( 'Import Site (Beta)', 'toolbar-buddy' ),
@@ -167,7 +167,7 @@
 		'meta'   => array( 'title' => _x( 'BackupBuddy Support &amp; Docs', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 	);
 
-		// BackupBuddy Support section
+		/** BackupBuddy Support section */
 		$menu_items['backupbuddysupport'] = array(
 			'parent' => $irsbackupbgroup,
 			'title'  => __( 'BackupBuddy Support', 'toolbar-buddy' ),
@@ -187,7 +187,7 @@
 			'meta'   => array( 'title' => __( 'BackupBuddy Multisite Forum', 'toolbar-buddy' ) )
 		);
 
-		// BackupBuddy Codex section
+		/** BackupBuddy Codex section */
 		$menu_items['backupbuddydocs'] = array(
 			'parent' => $irsbackupbgroup,
 			'title'  => __( 'BackupBuddy Codex', 'toolbar-buddy' ),

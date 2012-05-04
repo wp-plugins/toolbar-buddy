@@ -11,8 +11,34 @@
  * @link       http://twitter.com/#!/deckerweb
  *
  * @since 1.0
- * @version 1.1
+ * @version 1.2
  */
+
+/**
+ * Conditionally remove original Builder toolbar items
+ * Only if constant is set to "TRUE"!
+ *
+ * Usage: define( 'TBB_REMOVE_BUILDER_ORIGINAL_TOOLBAR', TRUE );
+ *
+ * @since 1.2
+ */
+if ( defined( 'TBB_REMOVE_BUILDER_ORIGINAL_TOOLBAR' ) && TBB_REMOVE_BUILDER_ORIGINAL_TOOLBAR ) {
+
+	add_action( 'wp_before_admin_bar_render', 'ddw_tbb_remove_builder_original', 99 );
+	/**
+	 * Remove original Builder toolbar items
+	 *
+	 * @since 1.2
+	 */
+	function ddw_tbb_remove_builder_original() {
+
+		global $wp_admin_bar;
+
+		$wp_admin_bar->remove_menu( 'builder' );
+	}
+
+}  // end-if constant check
+
 
 /**
  * Check for theme support for "builder-my-theme-menu"
@@ -88,12 +114,16 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 					'id'     => $builderblocksgroup,
 				) );
 
-			$menu_items['buildercontent-widgets'] = array(
-				'parent' => $buildercontent,
-				'title'  => __( 'Builder Widgets', 'toolbar-buddy' ),
-				'href'   => admin_url( 'widgets.php' ),
-				'meta'   => array( 'target' => '', 'title' => __( 'Builder Widgets', 'toolbar-buddy' ) )
-			);
+			/** Regular WordPress Widgets admin */
+			if ( current_user_can( 'edit_theme_options' ) ) {
+				$menu_items['buildercontent-widgets'] = array(
+					'parent' => $buildercontent,
+					'title'  => __( 'Builder Widgets', 'toolbar-buddy' ),
+					'href'   => admin_url( 'widgets.php' ),
+					'meta'   => array( 'target' => '', 'title' => __( 'Builder Widgets', 'toolbar-buddy' ) )
+				);
+			}  // end-if cap check
+
 			$menu_items['builderwidgets-views'] = array(
 				'parent' => $buildercontent,
 				'title'  => __( 'All Widget Content', 'toolbar-buddy' ),
@@ -118,7 +148,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 			'meta'   => array( 'title' => _x( 'Builder Support &amp; Docs', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 		);
 
-			// Builder Support section
+			/** Builder Support section */
 			$menu_items['buildersupport'] = array(
 				'parent' => $irsbuildergroup,
 				'title'  => __( 'Builder Support', 'toolbar-buddy' ),
@@ -144,7 +174,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 				'meta'   => array( 'title' => __( 'Builder Blocks Forum', 'toolbar-buddy' ) )
 			);
 
-			// Builder Codex section
+			/** Builder Codex section */
 			$menu_items['builderdocs'] = array(
 				'parent' => $irsbuildergroup,
 				'title'  => __( 'Builder Codex', 'toolbar-buddy' ),
@@ -212,12 +242,75 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 
 
 	/**
+	 * Builder Block - Events
+	 *
+	 * @since 1.2
+	 */
+	if ( ( ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'builder-block-events/init.php' ) ) || class_exists( 'BB_Events' ) ) && ( current_theme_supports( 'builder-my-theme-menu' ) && current_user_can( 'edit_posts' ) ) ) {
+
+		/** Post Type Events */
+		$menu_items['bblockevents'] = array(
+			'parent' => $builderblocksgroup,
+			'title'  => __( 'All Events', 'toolbar-buddy' ),
+			'href'   => admin_url( 'edit.php?post_type=it_bb_event' ),
+			'meta'   => array( 'target' => '', 'title' => __( 'All Events', 'toolbar-buddy' ) )
+		);
+		$menu_items['bblockevents-add'] = array(
+			'parent' => $bblockevents,
+			'title'  => __( 'Add new Event', 'toolbar-buddy' ),
+			'href'   => admin_url( 'post-new.php?post_type=it_bb_event' ),
+			'meta'   => array( 'target' => '', 'title' => __( 'Add new Event', 'toolbar-buddy' ) )
+		);
+		$menu_items['bblockevents-start'] = array(
+			'parent' => $bblockevents,
+			'title'  => __( 'Start Here', 'toolbar-buddy' ),
+			'href'   => admin_url( 'edit.php?post_type=it_bb_event&page=getting_started' ),
+			'meta'   => array( 'target' => '', 'title' => _x( 'Start Here - User Guide', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+		);
+		/** Events settings */
+		if ( current_user_can( 'edit_themes' ) ) {
+			$menu_items['bblockevents-settings'] = array(
+				'parent' => $bblockevents,
+				'title'  => __( 'Settings', 'toolbar-buddy' ),
+				'href'   => admin_url( 'edit.php?post_type=it_bb_event&page=bb-events-editor' ),
+				'meta'   => array( 'target' => '', 'title' => _x( 'Settings for Events', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+			);
+		}  // end-if cap check
+
+		/** Post Type Venues (locations) */
+		$menu_items['bblockvenues'] = array(
+			'parent' => $builderblocksgroup,
+			'title'  => __( 'All Venues', 'toolbar-buddy' ),
+			'href'   => admin_url( 'edit.php?post_type=it_bb_event_venue' ),
+			'meta'   => array( 'target' => '', 'title' => _x( 'All Venues - Event Locations', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+		);
+		$menu_items['bblockvenues-add'] = array(
+			'parent' => $bblockvenues,
+			'title'  => __( 'Add new Venue', 'toolbar-buddy' ),
+			'href'   => admin_url( 'post-new.php?post_type=it_bb_event_venue' ),
+			'meta'   => array( 'target' => '', 'title' => __( 'Add new Venue', 'toolbar-buddy' ) )
+		);
+		/** Venues settings */
+		if ( current_user_can( 'edit_themes' ) ) {
+			$menu_items['bblockvenues-positions'] = array(
+				'parent' => $bblockvenues,
+				'title'  => __( 'Settings', 'toolbar-buddy' ),
+				'href'   => admin_url( 'edit.php?post_type=it_bb_event_venue&page=bb-events-venue-editor' ),
+				'meta'   => array( 'target' => '', 'title' => _x( 'Settings for Venues', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+			);
+		}  // end-if cap check
+
+	}  // end-if Builder Block Events
+
+
+	/**
 	 * Builder Block - Church
 	 *
 	 * @since 1.0
 	 */
 	if ( ( ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'builder-block-church/init.php' ) ) || function_exists( 'it_builder_block_church_init' ) ) && ( current_theme_supports( 'builder-my-theme-menu' ) && current_user_can( 'edit_posts' ) ) ) {
-		// Post Type Sermons
+
+		/** Post Type Sermons */
 		$menu_items['bblocksermons'] = array(
 			'parent' => $builderblocksgroup,
 			'title'  => __( 'Sermons', 'toolbar-buddy' ),
@@ -242,7 +335,8 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 			'href'   => admin_url( 'edit-tags.php?taxonomy=sermon_tag&post_type=sermon' ),
 			'meta'   => array( 'target' => '', 'title' => __( 'Sermon Tags', 'toolbar-buddy' ) )
 		);
-		// Post Type Staff
+
+		/** Post Type Staff */
 		$menu_items['bblockstaff'] = array(
 			'parent' => $builderblocksgroup,
 			'title'  => __( 'Staff Members', 'toolbar-buddy' ),
@@ -261,6 +355,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 			'href'   => admin_url( 'edit-tags.php?taxonomy=staff_positions&post_type=staff' ),
 			'meta'   => array( 'target' => '', 'title' => __( 'Staff Positions', 'toolbar-buddy' ) )
 		);
+
 	}  // end-if Builder Block Church
 
 
@@ -270,7 +365,8 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 	 * @since 1.0
 	 */
 	if ( ( ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'builder-block-restaurant/init.php' ) ) || function_exists( 'it_builder_block_restaurant_init' ) ) && ( current_theme_supports( 'builder-my-theme-menu' ) && current_user_can( 'edit_posts' ) ) ) {
-		// Post Type Restaurant Menu Items
+
+		/** Post Type Restaurant Menu Items */
 		$menu_items['bblockmenus'] = array(
 			'parent' => $builderblocksgroup,
 			'title'  => __( 'Menu Items', 'toolbar-buddy' ),
@@ -295,7 +391,8 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 			'href'   => admin_url( 'edit-tags.php?taxonomy=restaurant_allergy&post_type=restaurant_menu_item' ),
 			'meta'   => array( 'target' => '', 'title' => __( 'Allergies', 'toolbar-buddy' ) )
 		);
-		// Post Type Restaurant Locations
+
+		/** Post Type Restaurant Locations */
 		$menu_items['bblocklocations'] = array(
 			'parent' => $builderblocksgroup,
 			'title'  => __( 'Locations', 'toolbar-buddy' ),
@@ -320,6 +417,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 			'href'   => admin_url( 'edit-tags.php?taxonomy=restaurant_cuisine&post_type=restaurant_location' ),
 			'meta'   => array( 'target' => '', 'title' => _x( 'Restaurant Cuisines', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 		);
+
 	}  // end-if Builder Block Restaurant
 
 /** End of Builder-specific plugins */

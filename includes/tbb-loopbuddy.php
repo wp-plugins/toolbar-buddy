@@ -18,7 +18,7 @@
  *
  * @since 1.0
  */
-	// LoopBuddy Settings section
+	/** LoopBuddy Settings section */
 	$menu_items['loopbuddysettings'] = array(
 		'parent' => $loopbgroup,
 		'title'  => __( 'LoopBuddy Settings', 'toolbar-buddy' ),
@@ -32,7 +32,7 @@
 		'meta'   => array( 'target' => '', 'title' => __( 'LoopBuddy: Getting Started', 'toolbar-buddy' ) )
 	);
 
-	// LoopBuddy Edit Loops section
+	/** LoopBuddy Edit Loops section */
 	$menu_items['loopbuddyedit'] = array(
 		'parent' => $loopbgroup,
 		'title'  => __( 'Edit Loops', 'toolbar-buddy' ),
@@ -40,7 +40,7 @@
 		'meta'   => array( 'target' => '', 'title' => __( 'Edit Loops', 'toolbar-buddy' ) )
 	);
 
-		// LoopBuddy Query Editor section
+		/** LoopBuddy Query Editor section */
 		$menu_items['loopbuddyedit-queries'] = array(
 			'parent' => $loopbuddyedit,
 			'title'  => __( 'Query Editor', 'toolbar-buddy' ),
@@ -48,7 +48,7 @@
 			'meta'   => array( 'target' => '', 'title' => __( 'Query Editor', 'toolbar-buddy' ) )
 		);
 
-		// LoopBuddy Layout Editor section
+		/** LoopBuddy Layout Editor section */
 		$menu_items['loopbuddyedit-layouts'] = array(
 			'parent' => $loopbuddyedit,
 			'title'  => _x( 'Layout Editor', 'Translators: LoopBuddy Layouts', 'toolbar-buddy' ),
@@ -65,7 +65,7 @@
 		'meta'   => array( 'title' => _x( 'LoopBuddy Support &amp; Docs', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 	);
 
-		// LoopBuddy Support section
+		/** LoopBuddy Support section */
 		$menu_items['loopbuddysupport'] = array(
 			'parent' => $irsloopbgroup,
 			'title'  => __( 'LoopBuddy Support', 'toolbar-buddy' ),
@@ -73,7 +73,7 @@
 			'meta'   => array( 'title' => __( 'LoopBuddy Support', 'toolbar-buddy' ) )
 		);
 
-		// LoopBuddy Codex section
+		/** LoopBuddy Codex section */
 		$menu_items['loopbuddydocs'] = array(
 			'parent' => $irsloopbgroup,
 			'title'  => __( 'LoopBuddy Codex', 'toolbar-buddy' ),
