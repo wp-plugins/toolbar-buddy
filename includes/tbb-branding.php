@@ -1,6 +1,6 @@
 <?php
 /**
- * Helper functions for custom branding & capabilities
+ * Helper functions for custom branding & capabilities.
  *
  * @package    Toolbar Buddy
  * @subpackage Branding
@@ -87,6 +87,7 @@
  * Helper functions for returning custom icons.
  *
  * @since 1.2
+ * @version 1.3
  *
  * @return string URL for custom icon image
  */
@@ -101,6 +102,90 @@
 	function __tbb_child_images_icon() {
 
 		return get_stylesheet_directory_uri() . '/images/icon-tbb.png';
+	}
+
+	/**
+	 * Helper function for returning the iThemes Builder icon
+	 *
+	 * @since 1.3
+	 *
+	 * @return tbb ithemes builder icon
+	 */
+	function __tbb_icon_builder() {
+
+		return plugins_url( 'images/icon-builder.png', dirname( __FILE__ ) );
+	}
+
+	/**
+	 * Helper function for returning the alternate iThemes Builder icon
+	 *
+	 * @since 1.3
+	 *
+	 * @return tbb alternate ithemes builder icon
+	 */
+	function __tbb_icon_buildertwo() {
+
+		return plugins_url( 'images/icon-builder2.png', dirname( __FILE__ ) );
+	}
+
+	/**
+	 * Helper function for returning the PluginBuddy Brand icon
+	 *
+	 * @since 1.3
+	 *
+	 * @return tbb pluginbuddy brand icon
+	 */
+	function __tbb_icon_pluginbuddy() {
+
+		return plugins_url( 'images/icon-pluginbuddy.png', dirname( __FILE__ ) );
+	}
+
+	/**
+	 * Helper function for returning the alternate PluginBuddy Brand icon
+	 *
+	 * @since 1.3
+	 *
+	 * @return tbb alternate pluginbuddy brand icon
+	 */
+	function __tbb_icon_pluginbuddytwo() {
+
+		return plugins_url( 'images/icon-pluginbuddy2.png', dirname( __FILE__ ) );
+	}
+
+	/**
+	 * Helper function for returning the DisplayBuddy icon
+	 *
+	 * @since 1.3
+	 *
+	 * @return tbb displaybuddy icon
+	 */
+	function __tbb_icon_displaybuddy() {
+
+		return plugins_url( 'images/icon-displaybuddy.png', dirname( __FILE__ ) );
+	}
+
+	/**
+	 * Helper function for returning the LoopBuddy icon
+	 *
+	 * @since 1.3
+	 *
+	 * @return tbb loopbuddy icon
+	 */
+	function __tbb_icon_loopbuddy() {
+
+		return plugins_url( 'images/icon-loopbuddy.png', dirname( __FILE__ ) );
+	}
+
+	/**
+	 * Helper function for returning the BackupBuddy icon
+	 *
+	 * @since 1.3
+	 *
+	 * @return tbb backupbuddy icon
+	 */
+	function __tbb_icon_backupbuddy() {
+
+		return plugins_url( 'images/icon-backupbuddy.png', dirname( __FILE__ ) );
 	}
 
 /** End of icon helper functions */

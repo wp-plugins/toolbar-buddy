@@ -1,6 +1,8 @@
 <?php 
 /**
- * Main plugin file. This plugin adds useful admin links and resources for iThemes Builder and popular PluginBuddy plugins to the WordPress Toolbar / Admin Bar.
+ * Main plugin file.
+ * This plugin adds useful admin links and resources for iThemes Builder
+ * and popular PluginBuddy plugins to the WordPress Toolbar / Admin Bar.
  *
  * @package   Toolbar Buddy
  * @author    David Decker
@@ -10,7 +12,7 @@
  * Plugin Name: Toolbar Buddy
  * Plugin URI: http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
  * Description: This plugin adds useful admin links and resources for iThemes Builder and popular PluginBuddy plugins to the WordPress Toolbar / Admin Bar.
- * Version: 1.2
+ * Version: 1.3
  * Author: David Decker - DECKERWEB
  * Author URI: http://deckerweb.de/
  * License: GPLv2 or later
@@ -42,13 +44,18 @@
  * Setting constants
  *
  * @since 1.0
- * @version 1.1
+ * @version 1.2
  */
 /** Plugin directory */
 define( 'TBB_PLUGIN_DIR', dirname( __FILE__ ) );
 
 /** Plugin base directory */
 define( 'TBB_PLUGIN_BASEDIR', dirname( plugin_basename( __FILE__ ) ) );
+
+/** Various link/content related helper constants */
+define( 'TBB_VTUTORIALS_BUILDER', apply_filters( 'tbb_filter_videos_builder', 'http://www.youtube.com/results?search_query=ithemes+builder' ) );
+define( 'TBB_VTUTORIALS_LOOPBUDDY', apply_filters( 'tbb_filter_videos_loopbuddy', 'http://www.youtube.com/results?search_query=loopbuddy' ) );
+define( 'TBB_VTUTORIALS_BACKUPBUDDY', apply_filters( 'tbb_filter_videos_backupbuddy', 'http://www.youtube.com/results?search_query=backupbuddy' ) );
 
 
 add_action( 'init', 'ddw_tbb_init' );
@@ -75,6 +82,39 @@ function ddw_tbb_init() {
 	/** Add "Settings Page" links to plugin page - only within 'wp-admin' */
 	if ( is_admin() && current_user_can( 'manage_options' ) ) {
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ) , 'ddw_tbb_settings_page_links' );
+	}
+
+	/** Define constants and set defaults for removing all or certain sections */
+	if ( ! defined( 'TBB_ALL_DISPLAY' ) ) {
+		define( 'TBB_ALL_DISPLAY', TRUE );
+	}
+
+	if ( ! defined( 'TBB_BUILDER_DISPLAY' ) ) {
+		define( 'TBB_BUILDER_DISPLAY', TRUE );
+	}
+
+	if ( ! defined( 'TBB_BUILDER_MANAGE_CONTENT_DISPLAY' ) ) {
+		define( 'TBB_BUILDER_MANAGE_CONTENT_DISPLAY', TRUE );
+	}
+
+	if ( ! defined( 'TBB_DISPLAYBUDDY_DISPLAY' ) ) {
+		define( 'TBB_DISPLAYBUDDY_DISPLAY', TRUE );
+	}
+
+	if ( ! defined( 'TBB_LOOPBUDDY_DISPLAY' ) ) {
+		define( 'TBB_LOOPBUDDY_DISPLAY', TRUE );
+	}
+
+	if ( ! defined( 'TBB_BACKUPBUDDY_DISPLAY' ) ) {
+		define( 'TBB_BACKUPBUDDY_DISPLAY', TRUE );
+	}
+
+	if ( ! defined( 'TBB_RESOURCES_DISPLAY' ) ) {
+		define( 'TBB_RESOURCES_DISPLAY', TRUE );
+	}
+
+	if ( ! defined( 'TBB_DE_DISPLAY' ) ) {
+		define( 'TBB_DE_DISPLAY', TRUE );
 	}
 
 }  // end of function ddw_tbb_init
@@ -112,7 +152,7 @@ function ddw_tbb_admin_bar_menu() {
 	if ( ! is_user_logged_in() || 
 		! is_admin_bar_showing() || 
 		! current_user_can( $tbb_filter_capability ) ||  // allows for custom filtering the required role/capability
-		defined( 'TBB_ALL_DISPLAY' )  // allows for custom disabling
+		! TBB_ALL_DISPLAY  // allows for custom disabling
 	)
 		return;
 
@@ -180,18 +220,23 @@ function ddw_tbb_admin_bar_menu() {
 
 
 	/** Check for active iThemes Builder framework and capabilities */
-	if ( ! defined( 'TBB_BUILDER_DISPLAY' ) && 
+	if ( TBB_BUILDER_DISPLAY && 
 		( function_exists( 'it_builder_load_theme_features' ) && current_user_can( 'edit_posts' ) ) 
 	) {
+
 		$tbb_builder_active = 'tbb_active_mode';
+
         	require_once( TBB_PLUGIN_DIR . '/includes/tbb-ithemesbuilder.php' );
+
 	} else {
+
 		$tbb_builder_active = 'tbb_irg_mode';
+
 	}  // end-if Builder check
 
 
 	/** Check for active DisplayBuddy plugin(s) and capabilities */
-	if ( ! defined( 'TBB_DISPLAYBUDDY_DISPLAY' ) && 
+	if ( TBB_DISPLAYBUDDY_DISPLAY && 
 		( ( class_exists( 'pluginbuddy_accordion' ) ||
 			class_exists( 'iThemesBillboard' ) ||
 			class_exists( 'pluginbuddy_carousel' ) ||
@@ -205,41 +250,73 @@ function ddw_tbb_admin_bar_menu() {
 			class_exists( 'PluginBuddyVideoShowcase' ) ) 
 			&& current_user_can( 'edit_posts' ) ) 
 	) {
+
 		$tbb_displaybuddy_active = 'tbb_active_mode';
+
         	require_once( TBB_PLUGIN_DIR . '/includes/tbb-displaybuddy.php' );
+
 	} else {
+
 		$tbb_displaybuddy_active = 'tbb_irg_mode';
+
 	}  // end-if DisplayBuddy check
 
 
 	/** Check for active LoopBuddy plugin and capabilities */
-	if ( ! defined( 'TBB_LOOPBUDDY_DISPLAY' ) && 
+	if ( TBB_LOOPBUDDY_DISPLAY && 
 		( class_exists( 'pluginbuddy_loopbuddy' ) && ( current_user_can( 'administrator' ) || current_user_can( 'edit_theme_options' ) ) ) 
 	) {
+
 		$tbb_loopbuddy_active = 'tbb_active_mode';
+
         	require_once( TBB_PLUGIN_DIR . '/includes/tbb-loopbuddy.php' );
+
 	} else {
+
 		$tbb_loopbuddy_active = 'tbb_irg_mode';
+
 	}  // end-if LoopBuddy check
 
 
-	/** Check for active BackupBuddy plugin and capabilities */
-	if ( ! defined( 'TBB_BACKUPBUDDY_DISPLAY' ) && ( class_exists( 'pluginbuddy_backupbuddy' ) && ( 
-								( is_multisite() && current_user_can( 'manage_sites' ) ) || 
-								( ! is_multisite() && current_user_can( 'administrator' ) ) 
-								) 
-							) 
-	) {
-		$tbb_backupbuddy_active = 'tbb_active_mode';
-        	require_once( TBB_PLUGIN_DIR . '/includes/tbb-backupbuddy.php' );
-	} else {
-		$tbb_backupbuddy_active = 'tbb_irg_mode';
-	}  // end-if BackupBuddy check
+	/** Check for active BackupBuddy 2.x/3.x plugin and capabilities */
+	if ( TBB_BACKUPBUDDY_DISPLAY ) {
+
+		/** Check for BackupBuddy 3.x stuff */
+		if ( class_exists( 'pb_backupbuddy' ) && ( 
+							( is_multisite() && current_user_can( 'manage_network' ) ) || 
+							( ! is_multisite() && current_user_can( 'administrator' ) ) 
+		) ) {
+
+			$tbb_backupbuddy_active = 'tbb_active_mode';
+
+			require_once( TBB_PLUGIN_DIR . '/includes/tbb-backupbuddy.php' );
+
+		}
+
+		/** Otherwise check for BackupBuddy 2.x stuff */
+		elseif ( class_exists( 'pluginbuddy_backupbuddy' ) && ( 
+							( is_multisite() && current_user_can( 'manage_sites' ) ) || 
+							( ! is_multisite() && current_user_can( 'administrator' ) ) 
+		) ) {
+
+			$tbb_backupbuddy_active = 'tbb_active_mode';
+
+			require_once( TBB_PLUGIN_DIR . '/includes/tbb-backupbuddy-2x.php' );
+
+		} else {
+
+			$tbb_backupbuddy_active = 'tbb_irg_mode';
+
+		}
+
+	}  // end-if TBB BackupBuddy display constant check
 
 
 	/** If no modules are active fall back to iResource Group only */
 	if ( $tbb_builder_active == 'tbb_irg_mode' && $tbb_displaybuddy_active == 'tbb_irg_mode' && $tbb_loopbuddy_active == 'tbb_irg_mode' && $tbb_backupbuddy_active == 'tbb_irg_mode' ) {
+
 		$menu_items = NULL;
+
 	}  // end-if
 
 
@@ -307,156 +384,16 @@ function ddw_tbb_admin_bar_menu() {
 	 * Display these items also if iThemes Builder or PluginBuddy plugins are not installed
 	 * iBuddy HQ menu items
 	 */
-	if ( ! defined( 'TBB_RESOURCES_DISPLAY' ) ) {
+	if ( TBB_RESOURCES_DISPLAY ) {
 
-		/** Set filter for "iBuddy HQ" string */
-		$tbb_ibuddy_hq_name = apply_filters( 'tbb_filter_ibuddy_hq_name', __( 'iBuddy HQ', 'toolbar-buddy' ) );
-
-		/** Add the menu items */
-		$iresourcegroup_menu_items = array(
-
-			/** Start entry - HQ */
-			'ibuddysites' => array(
-				'parent' => $iresourcegroup,
-				'title'  => esc_attr__( $tbb_ibuddy_hq_name ),
-				'href'   => 'http://ithemes.com/',
-				'meta'   => array( 'title' => esc_attr__( $tbb_ibuddy_hq_name ) )
-			),
-
-			/** Blogs section */
-			'ibuddyblogs' => array(
-				'parent' => $ibuddysites,
-				'title'  => __( 'Official Blog', 'toolbar-buddy' ),
-				'href'   => 'http://ithemes.com/category/blog/',
-				'meta'   => array( 'title' => __( 'Official Blog', 'toolbar-buddy' ) )
-			),
-			'ibuddyblogs-builder' => array(
-				'parent' => $ibuddyblogs,
-				'title'  => __( 'Builder Community Blog', 'toolbar-buddy' ),
-				'href'   => 'http://ithemesbuilder.com/',
-				'meta'   => array( 'title' => __( 'Builder Community Blog', 'toolbar-buddy' ) )
-			),
-			'ibuddyblogs-pb' => array(
-				'parent' => $ibuddyblogs,
-				'title'  => __( 'PluginBuddy Blog', 'toolbar-buddy' ),
-				'href'   => 'http://pluginbuddy.com/category/blog/',
-				'meta'   => array( 'title' => __( 'PluginBuddy Blog', 'toolbar-buddy' ) )
-			),
-			'ibuddyblogs-webdesign' => array(
-				'parent' => $ibuddyblogs,
-				'title'  => __( 'WebDesign.com Blog', 'toolbar-buddy' ),
-				'href'   => 'http://webdesign.com/news',
-				'meta'   => array( 'title' => __( 'WebDesign.com Blog', 'toolbar-buddy' ) )
-			),
-			'ibuddyblogs-thediv' => array(
-				'parent' => $ibuddyblogs,
-				'title'  => __( 'The Div Blog', 'toolbar-buddy' ),
-				'href'   => 'http://thediv.org/',
-				'meta'   => array( 'title' => _x( 'The Div Blog (thediv.org)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
-			),
-			'ibuddyblogs-cmiller' => array(
-				'parent' => $ibuddyblogs,
-				'title'  => __( 'Cory Miller Blog', 'toolbar-buddy' ),
-				'href'   => 'http://corymiller.com/blog/',
-				'meta'   => array( 'title' => _x( 'Cory Miller Blog (corymiller.com)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
-			),
-			'ibuddyblogs-jkopepasah' => array(
-				'parent' => $ibuddyblogs,
-				'title'  => __( 'Justin Kopepasah Blog', 'toolbar-buddy' ),
-				'href'   => 'http://kopepasah.com/',
-				'meta'   => array( 'title' => _x( 'Justin Kopepasah Blog (kopepasah.com)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
-			),
-
-			/** iThemesTV section */
-			'ithemestv' => array(
-				'parent' => $ibuddysites,
-				'title'  => __( 'iThemesTV', 'toolbar-buddy' ),
-				'href'   => 'http://ithemes.tv/',
-				'meta'   => array( 'title' => _x( 'iThemesTV - Video-Tutorials &amp; Live Events', 'Translators: For the tooltip', 'toolbar-buddy' ) )
-			),
-
-			/** Tutorials section */
-			'ibuddytutorials' => array(
-				'parent' => $ibuddysites,
-				'title'  => __( 'iThemes Tutorials', 'toolbar-buddy' ),
-				'href'   => 'http://ithemes.com/tutorials/',
-				'meta'   => array( 'title' => __( 'iThemes Tutorials', 'toolbar-buddy' ) )
-			),
-			'ibuddytutorials-builder' => array(
-				'parent' => $ibuddytutorials,
-				'title'  => __( 'Builder Tutorials', 'toolbar-buddy' ),
-				'href'   => 'http://ithemesbuilder.com/category/tutorials/',
-				'meta'   => array( 'title' => __( 'Builder Tutorials', 'toolbar-buddy' ) )
-			),
-			'ibuddytutorials-pb' => array(
-				'parent' => $ibuddytutorials,
-				'title'  => __( 'PluginBuddy Tutorials', 'toolbar-buddy' ),
-				'href'   => 'http://ithemes.com/codex/page/PluginBuddy',
-				'meta'   => array( 'title' => __( 'PluginBuddy Tutorials', 'toolbar-buddy' ) )
-			),
-			'ibuddytutorials-codex' => array(
-				'parent' => $ibuddytutorials,
-				'title'  => __( 'Complete Codex', 'toolbar-buddy' ),
-				'href'   => 'http://ithemes.com/codex/',
-				'meta'   => array( 'title' => __( 'Complete Codex', 'toolbar-buddy' ) )
-			),
-
-			/** FAQs section */
-			'ibuddyfaqs' => array(
-				'parent' => $ibuddysites,
-				'title'  => __( 'iThemes FAQ', 'toolbar-buddy' ),
-				'href'   => 'http://ithemes.com/frequently-asked-questions/',
-				'meta'   => array( 'title' => __( 'iThemes FAQ', 'toolbar-buddy' ) )
-			),
-			'ibuddyfaqs-pb' => array(
-				'parent' => $ibuddyfaqs,
-				'title'  => __( 'PluginBuddy FAQ', 'toolbar-buddy' ),
-				'href'   => 'http://pluginbuddy.com/frequently-asked-questions/',
-				'meta'   => array( 'title' => __( 'PluginBuddy FAQ', 'toolbar-buddy' ) )
-			),
-
-			/** Members section */
-			'ibuddymembers' => array(
-				'parent' => $ibuddysites,
-				'title'  => __( 'Members Area', 'toolbar-buddy' ),
-				'href'   => 'http://ithemes.com/member/member.php',
-				'meta'   => array( 'title' => __( 'Members Area', 'toolbar-buddy' ) )
-			),
-			'ibuddymembers-affiliates' => array(
-				'parent' => $ibuddymembers,
-				'title'  => __( 'Affiliates Area', 'toolbar-buddy' ),
-				'href'   => 'http://ithemes.com/member/aff_member.php',
-				'meta'   => array( 'title' => __( 'Affiliates Area', 'toolbar-buddy' ) )
-			),
-			'ibuddymembers-forum' => array(
-				'parent' => $ibuddymembers,
-				'title'  => __( 'Support Forum', 'toolbar-buddy' ),
-				'href'   => 'http://ithemes.com/forum/',
-				'meta'   => array( 'title' => __( 'Support Forum', 'toolbar-buddy' ) )
-			),
-
-			/** Free Plugins section */
-			'ibuddyfreeplugins' => array(
-				'parent' => $ibuddysites,
-				'title'  => __( 'Free PluginBuddy plugins', 'toolbar-buddy' ),
-				'href'   => 'http://pluginbuddy.com/free-wordpress-plugins/',
-				'meta'   => array( 'title' => __( 'Free PluginBuddy plugins', 'toolbar-buddy' ) )
-			),
-
-			/** News Planet section */
-			'ibuddyffnews' => array(
-				'parent' => $ibuddysites,
-				'title'  => __( 'iBuddy News Planet', 'toolbar-buddy' ),
-				'href'   => 'http://friendfeed.com/ibuddy-news',
-				'meta'   => array( 'title' => _x( 'iThemes Builder and PluginBuddy News Planet (official and community news via FriendFeed service)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
-			),
-		);
+		/** Include plugin file with resource links */
+		require_once( TBB_PLUGIN_DIR . '/includes/tbb-iresources.php' );
 
 	}  // end-if constant check for displaying resources
 
 
 	/** Display language specific links only for these locales: de_DE, de_AT, de_CH, de_LU */
-	if ( ! defined( 'TBB_DE_DISPLAY' ) && ( get_locale() == 'de_DE' || get_locale() == 'de_AT' || get_locale() == 'de_CH' || get_locale() == 'de_LU' ) ) {
+	if ( TBB_DE_DISPLAY && ( get_locale() == 'de_DE' || get_locale() == 'de_AT' || get_locale() == 'de_CH' || get_locale() == 'de_LU' ) ) {
 		/** German iThemes & PluginBuddy language packs */
 		$iresourcegroup_menu_items['languages-de'] = array(
 			'parent' => $iresourcegroup,
@@ -479,7 +416,7 @@ function ddw_tbb_admin_bar_menu() {
 					$displaybgroup, $displaybuddystart, $dpbaccordion, $displaybuddysupport, $displaybuddydocs, 
 					$ibuddysites, $iresourcegroup, 
 					$irsbuildergroup, $irsbackupbgroup, $irsloopbgroup, $irsdisplaybgroup
-				);
+	);  // end of array
 
 
 	/**
@@ -505,7 +442,10 @@ function ddw_tbb_admin_bar_menu() {
 			'id'    => $ibuddybar,
 			'title' => esc_attr__( $tbb_main_item_title ),
 			'href'  => '#',
-			'meta'  => array( 'class' => $tbb_main_item_icon_display, 'title' => esc_attr__( $tbb_main_item_title_tooltip ) )
+			'meta'  => array(
+						'class' => esc_attr( $tbb_main_item_icon_display ),
+						'title' => esc_attr__( $tbb_main_item_title_tooltip )
+			)
 		) );
 
 
@@ -526,7 +466,7 @@ function ddw_tbb_admin_bar_menu() {
 			$menu_item['meta']['class'] .= $prefix . 'tbb-new-tab';
 		}
 
-		/** Add item */
+		/** Add menu items */
 		$wp_admin_bar->add_menu( $menu_item );
 
 	}  // end foreach menu items
@@ -557,7 +497,7 @@ function ddw_tbb_admin_bar_menu() {
 			$iresourcegroup_menu_item['meta']['class'] .= $prefix . 'tbb-new-tab';
 		}
 
-		/** iResource Group: Add item */
+		/** iResource Group: Add menu items */
 		$wp_admin_bar->add_menu( $iresourcegroup_menu_item );
 
 	}  // end foreach iResource Group
@@ -580,11 +520,12 @@ add_action( 'admin_head', 'ddw_tbb_admin_style' );
  * Add the styles for new WordPress Toolbar / Admin Bar entry
  * 
  * @since 1.0
+ * @version 1.1
  */
 function ddw_tbb_admin_style() {
 
-	/** No styles if admin bar is disabled */
-	if ( ! is_admin_bar_showing() || ! is_user_logged_in() )
+	/** No styles if admin bar is disabled or user is not logged in or items are disabled via constant */
+	if ( ! is_admin_bar_showing() || ! is_user_logged_in() || ! TBB_ALL_DISPLAY )
 		return;
 
 	/** Add CSS styles to wp_head/admin_head */
@@ -605,6 +546,12 @@ dirname( __FILE__ ) ) );
 		#wp-admin-bar-ddw-ibuddy-languages-de > .ab-item:before {
 			color: #ff9900;
 			content: '• ';
+		}
+		#wp-admin-bar-ddw-ibuddy-irsbuildergroup .ab-item,
+		#wp-admin-bar-ddw-ibuddy-irsdisplaybgroup .ab-item,
+		#wp-admin-bar-ddw-ibuddy-irsloopbgroup .ab-item,
+		#wp-admin-bar-ddw-ibuddy-irsbackupbgroup .ab-item {
+			color: #21759b !important;
 		}
 	</style>
 	<?php

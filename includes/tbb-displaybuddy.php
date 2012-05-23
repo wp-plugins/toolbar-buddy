@@ -1,6 +1,6 @@
 <?php
 /**
- * Display links for active DisplayBuddy plugin
+ * Display links for active DisplayBuddy plugin.
  *
  * @package    Toolbar Buddy
  * @subpackage PluginBuddy Plugins Support
@@ -439,7 +439,7 @@
 	$menu_items['irsdisplaybgroup'] = array(
 		'parent' => $iresourcegroup,
 		'title'  => __( 'DisplayBuddy Support &amp; Docs', 'toolbar-buddy' ),
-		'href'   => '#',
+		'href'   => false,
 		'meta'   => array( 'title' => _x( 'DisplayBuddy Support &amp; Docs', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 	);
 

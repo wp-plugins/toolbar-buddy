@@ -1,6 +1,6 @@
 <?php
 /**
- * Display links for active iThemes Builder Framework
+ * Display links for active iThemes Builder Framework.
  *
  * @package    Toolbar Buddy
  * @subpackage iThemes Builder Support
@@ -100,7 +100,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 		}  // end-if Builder settings & layouts
 
 		/** Builder Manage Content section */
-		if ( current_user_can( 'edit_posts' ) ) {
+		if ( TBB_BUILDER_MANAGE_CONTENT_DISPLAY && current_user_can( 'edit_posts' ) ) {
 		$menu_items['buildercontent'] = array(
 			'parent' => $ithemesgroup,
 			'title'  => __( 'Manage Content', 'toolbar-buddy' ),
@@ -144,7 +144,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 		$menu_items['irsbuildergroup'] = array(
 			'parent' => $iresourcegroup,
 			'title'  => __( 'Builder Support &amp; Docs', 'toolbar-buddy' ),
-			'href'   => '#',
+			'href'   => false,
 			'meta'   => array( 'title' => _x( 'Builder Support &amp; Docs', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 		);
 
@@ -198,6 +198,12 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 				'title'  => __( 'Builder Child Themes', 'toolbar-buddy' ),
 				'href'   => 'http://ithemes.com/codex/page/Builder_Child_Themes',
 				'meta'   => array( 'title' => _x( 'Builder Child Themes', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+			);
+			$menu_items['builderdocs-videos'] = array(
+				'parent' => $builderdocs,
+				'title'  => __( 'Video Tutorials', 'toolbar-buddy' ),
+				'href'   => esc_url( TBB_VTUTORIALS_BUILDER ),
+				'meta'   => array( 'title' => _x( 'Builder Video Tutorials (YouTube Search)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 			);
 
 	/** End of Builder links */

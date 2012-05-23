@@ -18,6 +18,7 @@
  * Add "Settings" links to plugin page
  *
  * @since 1.2
+ * @version 1.1
  *
  * @global mixed $tbb_builder_active, $tbb_loopbuddy_active, $tbb_backupbuddy_active
  * @param  $tbb_links
@@ -26,30 +27,44 @@
  */
 function ddw_tbb_settings_page_links( $tbb_links ) {
 
+	/** Setting globals */
 	global $tbb_builder_active, $tbb_loopbuddy_active, $tbb_backupbuddy_active;
 
+	/** Builder settings link */
 	if ( $tbb_builder_active == 'tbb_active_mode' ) {
 		$tbb_builder_link = sprintf( ' &middot; <a href="%s" title="%s">%s</a>' , admin_url( 'admin.php?page=theme-settings' ) , __( 'Go to the Builder settings page', 'toolbar-buddy' ) , __( 'Builder', 'toolbar-buddy' ) );
 	} else {
 		$tbb_builder_link = FALSE;
 	}
 
+	/** LoopBuddy settings link */
 	if ( $tbb_loopbuddy_active == 'tbb_active_mode' ) {
 		$tbb_loopbuddy_link = sprintf( ' &middot; <a href="%s" title="%s">%s</a>' , admin_url( 'admin.php?page=pluginbuddy_loopbuddy-settings' ) , __( 'Go to the LoopBuddy settings page', 'toolbar-buddy' ) , __( 'Loops', 'toolbar-buddy' ) );
 	} else {
 		$tbb_loopbuddy_link = FALSE;
 	}
 
+	/** Retrieve BackupBuddy admin url */
+	if ( class_exists( 'pb_backupbuddy' ) ) {
+		$tbb_backupbuddy_aurl_slug = 'pb_backupbuddy_backup';
+	} elseif ( class_exists( 'pluginbuddy_backupbuddy' ) ) {
+		$tbb_backupbuddy_aurl_slug = 'pluginbuddy_backupbuddy-backup';
+	}
+
+	/** BackupBuddy settings link */
 	if ( $tbb_backupbuddy_active == 'tbb_active_mode' ) {
-		$tbb_backupbuddy_link = sprintf( ' &middot; <a href="%s" title="%s">%s</a>' , network_admin_url( 'admin.php?page=pluginbuddy_backupbuddy-backup' ) , __( 'Go to the BackupBuddy settings page', 'toolbar-buddy' ) , __( 'Backups', 'toolbar-buddy' ) );
+		$tbb_backupbuddy_link = sprintf( ' &middot; <a href="%s" title="%s">%s</a>' , network_admin_url( 'admin.php?page=' . $tbb_backupbuddy_aurl_slug . '' ) , __( 'Go to the BackupBuddy settings page', 'toolbar-buddy' ) , __( 'Backups', 'toolbar-buddy' ) );
 	} else {
 		$tbb_backupbuddy_link = FALSE;
 	}
-	
+
+	/** Setup the current settings links */
 	$tbb_settings_links = $tbb_builder_link . $tbb_loopbuddy_link . $tbb_backupbuddy_link;
 
+	/** Build the settings links array */
 	array_unshift( $tbb_links, $tbb_settings_links );
 
+	/** Display the settings links */
 	return $tbb_links;
 
 }  // end of function ddw_tbb_settings_page_links
@@ -72,7 +87,7 @@ function ddw_tbb_plugin_links( $tbb_links, $tbb_file ) {
 
 	if ( $tbb_file == TBB_PLUGIN_BASEDIR . '/toolbar-buddy.php' ) {
 		$tbb_links[] = '<a href="http://wordpress.org/extend/plugins/toolbar-buddy/faq/" target="_new" title="' . __( 'FAQ', 'toolbar-buddy' ) . '">' . __( 'FAQ', 'toolbar-buddy' ) . '</a>';
-		$tbb_links[] = '<a href="http://wordpress.org/tags/toolbar-buddy?forum_id=10" target="_new" title="' . __( 'Support', 'toolbar-buddy' ) . '">' . __( 'Support', 'toolbar-buddy' ) . '</a>';
+		$tbb_links[] = '<a href="http://wordpress.org/support/plugin/toolbar-buddy" target="_new" title="' . __( 'Support', 'toolbar-buddy' ) . '">' . __( 'Support', 'toolbar-buddy' ) . '</a>';
 		$tbb_links[] = '<a href="' . __( 'http://genesisthemes.de/en/donate/', 'toolbar-buddy' ) . '" target="_new" title="' . __( 'Donate', 'toolbar-buddy' ) . '">' . __( 'Donate', 'toolbar-buddy' ) . '</a>';
 	}
 

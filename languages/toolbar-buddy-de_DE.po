@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Toolbar Buddy\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/toolbar-buddy?forum_id=10\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/toolbar-buddy\n"
 "POT-Creation-Date: 2012-02-26 15:04+0100\n"
-"PO-Revision-Date: 2012-05-04 19:33+0100\n"
+"PO-Revision-Date: 2012-05-23 11:23+0100\n"
 "Last-Translator: David Decker <deckerweb.mobil@googlemail.com>\n"
 "Language-Team: DECKERWEB <deckerweb.mobil@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -25,112 +25,131 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:52
+#: includes/tbb-backupbuddy-2x.php:54
 #: includes/tbb-backupbuddy.php:51
 #: includes/tbb-backupbuddy.php:53
 msgid "BackupBuddy Tools"
 msgstr "BackupBuddy Werkzeuge"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:58
+#: includes/tbb-backupbuddy-2x.php:60
 #: includes/tbb-backupbuddy.php:57
 #: includes/tbb-backupbuddy.php:59
 msgid "BackupBuddy Settings"
 msgstr "BackupBuddy Einstellungen"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:64
+#: includes/tbb-backupbuddy-2x.php:66
 #: includes/tbb-backupbuddy.php:63
 #: includes/tbb-backupbuddy.php:65
 msgid "Scheduling"
 msgstr "Zeitplan"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:70
+#: includes/tbb-backupbuddy-2x.php:72
 #: includes/tbb-backupbuddy.php:69
 #: includes/tbb-backupbuddy.php:71
 msgid "Run Malware Scan"
 msgstr "Scan auf Malware"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:76
+#: includes/tbb-backupbuddy-2x.php:78
 #: includes/tbb-backupbuddy.php:75
 #: includes/tbb-backupbuddy.php:77
 msgid "Web Server Info"
 msgstr "Server-Informationen"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:82
+#: includes/tbb-backupbuddy-2x.php:84
 #: includes/tbb-backupbuddy.php:81
 #: includes/tbb-backupbuddy.php:83
 msgid "BackupBuddy: Getting Started"
 msgstr "BackupBuddy: Erste Schritte"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:91
+#: includes/tbb-backupbuddy-2x.php:93
 #: includes/tbb-backupbuddy.php:90
 #: includes/tbb-backupbuddy.php:92
 msgid "Backup &amp; Restore"
 msgstr "Backup &amp; Wiederherstellung"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:97
+#: includes/tbb-backupbuddy-2x.php:99
 #: includes/tbb-backupbuddy.php:96
 #: includes/tbb-backupbuddy.php:98
 msgid "Run Database Backup"
 msgstr "Jetzt: Datenbanksicherung"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:103
+#: includes/tbb-backupbuddy-2x.php:105
 #: includes/tbb-backupbuddy.php:102
 #: includes/tbb-backupbuddy.php:104
 msgid "Run FULL Backup"
 msgstr "Jetzt: VOLLSTÄNDIGE Datensicherung"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-2x.php:109
+#: includes/tbb-backupbuddy-2x.php:111
 #: includes/tbb-backupbuddy.php:108
-#: includes/tbb-backupbuddy.php:110
 msgid "Edit external Destinations"
 msgstr "Ziele für externe Datensicherung"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:165
+#: includes/tbb-backupbuddy-resources.php:20
 msgid "BackupBuddy Support &amp; Docs"
 msgstr "BackupBuddy Support &amp; Doku"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:167
+#: includes/tbb-backupbuddy-resources.php:22
 msgctxt "Translators: For the tooltip"
 msgid "BackupBuddy Support &amp; Docs"
 msgstr "BackupBuddy Support-Foren &amp; Dokumentation"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:173
-#: includes/tbb-backupbuddy.php:175
+#: includes/tbb-backupbuddy-resources.php:28
+#: includes/tbb-backupbuddy-resources.php:30
 msgid "BackupBuddy Support"
 msgstr "BackupBuddy Support"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:179
-#: includes/tbb-backupbuddy.php:181
+#: includes/tbb-backupbuddy-resources.php:34
+#: includes/tbb-backupbuddy-resources.php:36
 msgid "BackupBuddy Forum"
 msgstr "BackupBuddy Forum"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:185
-#: includes/tbb-backupbuddy.php:187
+#: includes/tbb-backupbuddy-resources.php:40
+#: includes/tbb-backupbuddy-resources.php:42
 msgid "BackupBuddy Multisite Forum"
 msgstr "BackupBuddy Multisite Forum"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:193
+#: includes/tbb-backupbuddy-resources.php:57
 msgid "BackupBuddy Codex"
 msgstr "BackupBuddy Dokumentation"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:195
+#: includes/tbb-backupbuddy-resources.php:59
 msgctxt "Translators: For the tooltip"
 msgid "BackupBuddy Codex &amp; Documentation"
 msgstr "BackupBuddy Dokumentation"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:199
+#: includes/tbb-backupbuddy-resources.php:63
 msgid "Multisite Documentation"
 msgstr "Multisite-Dokumentation"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:201
+#: includes/tbb-backupbuddy-resources.php:65
 msgctxt "Translators: For the tooltip"
 msgid "Multisite Documentation"
 msgstr "Dokumentation für BackupBuddy in Multisite"
@@ -428,225 +447,225 @@ msgid "Manage Content"
 msgstr "Inhalt verwalten"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:119
 #: includes/tbb-ithemesbuilder.php:121
+#: includes/tbb-ithemesbuilder.php:123
 msgid "Builder Widgets"
 msgstr "Builder Widgets"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:125
-#: includes/tbb-ithemesbuilder.php:127
+#: includes/tbb-ithemesbuilder.php:129
+#: includes/tbb-ithemesbuilder.php:131
 msgid "All Widget Content"
 msgstr "Alle Widget-Inhalte"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:131
-#: includes/tbb-ithemesbuilder.php:133
+#: includes/tbb-ithemesbuilder.php:135
+#: includes/tbb-ithemesbuilder.php:137
 msgid "Add new Widget Content"
 msgstr "Neuen Widget-Inhalt hinzufügen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:142
+#: includes/tbb-ithemesbuilder.php:146
 msgid "Builder Support &amp; Docs"
 msgstr "Builder Support &amp; Doku"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:144
+#: includes/tbb-ithemesbuilder.php:148
 msgctxt "Translators: For the tooltip"
 msgid "Builder Support &amp; Docs"
 msgstr "Builder Support &amp; Dokumentation"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:150
-#: includes/tbb-ithemesbuilder.php:152
+#: includes/tbb-ithemesbuilder.php:154
+#: includes/tbb-ithemesbuilder.php:156
 msgid "Builder Support"
 msgstr "Builder Support"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:156
-#: includes/tbb-ithemesbuilder.php:158
+#: includes/tbb-ithemesbuilder.php:160
+#: includes/tbb-ithemesbuilder.php:162
 msgid "Builder Forum"
 msgstr "Builder Forum"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:162
-#: includes/tbb-ithemesbuilder.php:164
+#: includes/tbb-ithemesbuilder.php:166
+#: includes/tbb-ithemesbuilder.php:168
 msgid "Builder Plugins Forum"
 msgstr "Builder Plugins - Foren"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:168
-#: includes/tbb-ithemesbuilder.php:170
+#: includes/tbb-ithemesbuilder.php:172
+#: includes/tbb-ithemesbuilder.php:174
 msgid "Builder Blocks Forum"
 msgstr "Builder Inhaltsblöcke - Foren"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:176
+#: includes/tbb-ithemesbuilder.php:180
 msgid "Builder Codex"
 msgstr "Builder Dokumentation"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:178
+#: includes/tbb-ithemesbuilder.php:182
 msgctxt "Translators: For the tooltip"
 msgid "Builder Codex &amp; Documentation"
 msgstr "Dokumentation für iThemes Builder Framework"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:182
+#: includes/tbb-ithemesbuilder.php:186
 msgid "Builder 3.0 Introduction"
 msgstr "Builder 3.0+ Einführung"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:184
+#: includes/tbb-ithemesbuilder.php:188
 msgctxt "Translators: For the tooltip"
 msgid "Builder 3.0 Introduction"
 msgstr "Einführung in Builder Framework ab Version 3.0+"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:188
+#: includes/tbb-ithemesbuilder.php:192
 msgid "Builder Documentation"
 msgstr "Builder Dokumentation"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:190
+#: includes/tbb-ithemesbuilder.php:194
 msgctxt "Translators: For the tooltip"
 msgid "Builder Documentation"
 msgstr "Dokumentation für iThemes Builder Framework"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:194
+#: includes/tbb-ithemesbuilder.php:198
 msgid "Builder Child Themes"
 msgstr "Builder Child Themes"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:196
+#: includes/tbb-ithemesbuilder.php:200
 msgctxt "Translators: For the tooltip"
 msgid "Builder Child Themes"
 msgstr "Dokumentation der Child Themes für Builder Framework"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:218
-#: includes/tbb-ithemesbuilder.php:220
+#: includes/tbb-ithemesbuilder.php:228
+#: includes/tbb-ithemesbuilder.php:230
 msgid "Style Manager"
 msgstr "Stil-Manager"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:233
-#: includes/tbb-ithemesbuilder.php:235
+#: includes/tbb-ithemesbuilder.php:243
+#: includes/tbb-ithemesbuilder.php:245
 msgid "SEO &amp; Meta"
 msgstr "SEO &amp; Meta-Informationen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:306
-#: includes/tbb-ithemesbuilder.php:308
+#: includes/tbb-ithemesbuilder.php:322
+#: includes/tbb-ithemesbuilder.php:324
 msgid "Sermons"
 msgstr "Predigten"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:312
-#: includes/tbb-ithemesbuilder.php:314
+#: includes/tbb-ithemesbuilder.php:328
+#: includes/tbb-ithemesbuilder.php:330
 msgid "Add new Sermon"
 msgstr "Neue Predigt hinzufügen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:318
-#: includes/tbb-ithemesbuilder.php:320
+#: includes/tbb-ithemesbuilder.php:334
+#: includes/tbb-ithemesbuilder.php:336
 msgid "Sermon Categories"
 msgstr "Predigt-Kategorien"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:324
-#: includes/tbb-ithemesbuilder.php:326
+#: includes/tbb-ithemesbuilder.php:340
+#: includes/tbb-ithemesbuilder.php:342
 msgid "Sermon Tags"
 msgstr "Predigt-Schlagwörter"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:332
+#: includes/tbb-ithemesbuilder.php:348
 msgid "Staff Members"
 msgstr "Team-Mitglieder"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:334
+#: includes/tbb-ithemesbuilder.php:350
 msgctxt "Translators: For the tooltip"
 msgid "Staff Members"
 msgstr "Team-Mitglieder (Mitarbeiterstab)"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:338
-#: includes/tbb-ithemesbuilder.php:340
+#: includes/tbb-ithemesbuilder.php:354
+#: includes/tbb-ithemesbuilder.php:356
 msgid "Add new Staff Member"
 msgstr "Neues Team-Mitglied hinzufügen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:344
-#: includes/tbb-ithemesbuilder.php:346
+#: includes/tbb-ithemesbuilder.php:360
+#: includes/tbb-ithemesbuilder.php:362
 msgid "Staff Positions"
 msgstr "Positionen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:362
+#: includes/tbb-ithemesbuilder.php:378
 msgid "Menu Items"
 msgstr "Menüs"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:364
+#: includes/tbb-ithemesbuilder.php:380
 msgctxt "Translators: For the tooltip"
 msgid "Restaurant Menu Items"
 msgstr "Restaurant-Menüs"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:368
-#: includes/tbb-ithemesbuilder.php:370
+#: includes/tbb-ithemesbuilder.php:384
+#: includes/tbb-ithemesbuilder.php:386
 msgid "Add new Menu Item"
 msgstr "Neues Menü hinzufügen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:374
-#: includes/tbb-ithemesbuilder.php:376
+#: includes/tbb-ithemesbuilder.php:390
+#: includes/tbb-ithemesbuilder.php:392
 msgid "Courses"
 msgstr "Gänge"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:380
-#: includes/tbb-ithemesbuilder.php:382
+#: includes/tbb-ithemesbuilder.php:396
+#: includes/tbb-ithemesbuilder.php:398
 msgid "Allergies"
 msgstr "Allergien"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:388
+#: includes/tbb-ithemesbuilder.php:404
 msgid "Locations"
 msgstr "Orte"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:390
+#: includes/tbb-ithemesbuilder.php:406
 msgctxt "Translators: For the tooltip"
 msgid "Restaurant Locations"
 msgstr "Restaurant-Orte"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:394
-#: includes/tbb-ithemesbuilder.php:396
+#: includes/tbb-ithemesbuilder.php:410
+#: includes/tbb-ithemesbuilder.php:412
 msgid "Add new Location"
 msgstr "Neuen Ort hinzufügen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:400
+#: includes/tbb-ithemesbuilder.php:416
 msgid "Features"
 msgstr "Merkmale"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:402
+#: includes/tbb-ithemesbuilder.php:418
 msgctxt "Translators: For the tooltip"
 msgid "Restaurant Features"
 msgstr "Restaurant-Eigenschaften"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:406
+#: includes/tbb-ithemesbuilder.php:422
 msgid "Cuisines"
 msgstr "Küchen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:408
+#: includes/tbb-ithemesbuilder.php:424
 msgctxt "Translators: For the tooltip"
 msgid "Restaurant Cuisines"
 msgstr "Restaurant - Küchen (z.B. Französische, Asiatische...)"
@@ -734,48 +753,48 @@ msgid "http://deckerweb.de/"
 msgstr "http://deckerweb.de/"
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:74
+#: includes/tbb-admin.php:89
 msgid "FAQ"
 msgstr "FAQ - Häufige Fragen"
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:75
+#: includes/tbb-admin.php:90
 msgid "Support"
 msgstr "Hilfe und Unterstützung (Support)"
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:76
+#: includes/tbb-admin.php:91
 msgid "http://genesisthemes.de/en/donate/"
 msgstr "http://genesisthemes.de/spenden/"
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:76
+#: includes/tbb-admin.php:91
 msgid "Donate"
 msgstr "Spenden"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:314
+#: includes/tbb-iresources.php:18
 msgid "iBuddy HQ"
 msgstr "iBuddy Zentrale"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:327
-#: toolbar-buddy.php:329
+#: includes/tbb-iresources.php:34
+#: includes/tbb-iresources.php:36
 msgid "Official Blog"
 msgstr "Offizielle Blogs"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:461
+#: toolbar-buddy.php:400
 msgid "German language files"
 msgstr "Deutsche Sprachdateien"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:494
+#: toolbar-buddy.php:433
 msgid "iBuddy"
 msgstr "iBuddy"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:497
+#: toolbar-buddy.php:436
 msgctxt "Translators: For the tooltip"
 msgid "iBuddy"
 msgstr "iBuddy - iThemes Builder plus PluginBuddies"
@@ -795,279 +814,326 @@ msgid "Layout Editor"
 msgstr "Layout-Editor"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:339
-#: toolbar-buddy.php:341
+#: includes/tbb-iresources.php:46
+#: includes/tbb-iresources.php:48
 msgid "PluginBuddy Blog"
 msgstr "PluginBuddy Blog"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:345
-#: toolbar-buddy.php:347
+#: includes/tbb-iresources.php:52
+#: includes/tbb-iresources.php:54
 msgid "WebDesign.com Blog"
 msgstr "WebDesign.com Blog"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:351
+#: includes/tbb-iresources.php:58
 msgid "The Div Blog"
 msgstr "The Div Blog"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:353
+#: includes/tbb-iresources.php:60
 msgctxt "Translators: For the tooltip"
 msgid "The Div Blog (thediv.org)"
 msgstr "The Div Blog (thediv.org)"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:357
+#: includes/tbb-iresources.php:64
 msgid "Cory Miller Blog"
 msgstr "Cory Millers Blog"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:359
+#: includes/tbb-iresources.php:66
 msgctxt "Translators: For the tooltip"
 msgid "Cory Miller Blog (corymiller.com)"
 msgstr "Cory Millers Blog (corymiller.com)"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:363
+#: includes/tbb-iresources.php:70
 msgid "Justin Kopepasah Blog"
 msgstr "Justin Kopepasahs Blog"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:365
+#: includes/tbb-iresources.php:72
 msgctxt "Translators: For the tooltip"
 msgid "Justin Kopepasah Blog (kopepasah.com)"
 msgstr "Justin Kopepasahs Blog (kopepasah.com)"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:371
+#: includes/tbb-iresources.php:78
 msgid "iThemesTV"
 msgstr "iThemesTV"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:373
+#: includes/tbb-iresources.php:80
 msgctxt "Translators: For the tooltip"
 msgid "iThemesTV - Video-Tutorials &amp; Live Events"
 msgstr "iThemesTV - Video-Anleitungen &amp; Live-Übertragungen"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:379
-#: toolbar-buddy.php:381
+#: includes/tbb-iresources.php:86
+#: includes/tbb-iresources.php:88
 msgid "iThemes Tutorials"
 msgstr "iThemes Anleitungen"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:391
-#: toolbar-buddy.php:393
+#: includes/tbb-iresources.php:98
+#: includes/tbb-iresources.php:100
 msgid "PluginBuddy Tutorials"
 msgstr "PluginBuddy Anleitungen"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:397
-#: toolbar-buddy.php:399
+#: includes/tbb-iresources.php:104
+#: includes/tbb-iresources.php:106
 msgid "Complete Codex"
 msgstr "Komplette Dokumentation"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:405
-#: toolbar-buddy.php:407
+#: includes/tbb-iresources.php:112
+#: includes/tbb-iresources.php:114
 msgid "iThemes FAQ"
 msgstr "iThemes Häufige Fragen"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:411
-#: toolbar-buddy.php:413
+#: includes/tbb-iresources.php:118
+#: includes/tbb-iresources.php:120
 msgid "PluginBuddy FAQ"
 msgstr "PluginBuddy Häufige Fragen"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:419
-#: toolbar-buddy.php:421
+#: includes/tbb-iresources.php:126
+#: includes/tbb-iresources.php:128
 msgid "Members Area"
 msgstr "Mitgliederbereich"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:425
-#: toolbar-buddy.php:427
+#: includes/tbb-iresources.php:132
+#: includes/tbb-iresources.php:134
 msgid "Affiliates Area"
 msgstr "Partnerprogramm"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:431
-#: toolbar-buddy.php:433
+#: includes/tbb-iresources.php:138
+#: includes/tbb-iresources.php:140
 msgid "Support Forum"
 msgstr "Support-Foren"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:439
-#: toolbar-buddy.php:441
+#: includes/tbb-iresources.php:146
+#: includes/tbb-iresources.php:148
 msgid "Free PluginBuddy plugins"
 msgstr "Freie PluginBuddy-Plugins"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:447
+#: includes/tbb-iresources.php:154
 msgid "iBuddy News Planet"
 msgstr "iBuddy Nachrichten Planet"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:449
+#: includes/tbb-iresources.php:156
 msgctxt "Translators: For the tooltip"
 msgid "iThemes Builder and PluginBuddy News Planet (official and community news via FriendFeed service)"
 msgstr "Nachrichten-Planet für iThemes Builder und PluginBuddy-Plugins (offizielle und Community-Nachrichten via FriendFeed-Dienst)"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:463
+#: toolbar-buddy.php:402
 msgctxt "Translators: For the tooltip"
 msgid "German language files for iThemes Builder Framework and PluginBuddy Plugins"
 msgstr "Deutsche Sprachdateien für iThemes Builder Framework und PluginBuddy-Plugins"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:123
+#: includes/tbb-backupbuddy-2x.php:124
+#: includes/tbb-backupbuddy.php:129
 msgid "Multsite Extras"
 msgstr "Multisite-Extras"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:125
+#: includes/tbb-backupbuddy-2x.php:126
+#: includes/tbb-backupbuddy.php:131
 msgctxt "Translators: For the tooltip"
 msgid "Multsite Extras"
 msgstr "Extrafunktionen für WordPress Multisite"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:131
+#: includes/tbb-backupbuddy-2x.php:132
 msgid "Export Site (Beta)"
 msgstr "Webseite exportieren (Beta)"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:133
+#: includes/tbb-backupbuddy-2x.php:134
 msgctxt "Translators: For the tooltip"
 msgid "Export Site (Beta)"
 msgstr "Webseite exportieren (Beta - funktioniert innerhalb einer einzelnen Webseite von Multisite)"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:139
+#: includes/tbb-backupbuddy-2x.php:140
 msgid "Duplicate Site (Beta)"
 msgstr "Webseite duplizieren (Beta)"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:141
+#: includes/tbb-backupbuddy-2x.php:142
 msgctxt "Translators: For the tooltip"
 msgid "Duplicate Site (Beta)"
 msgstr "Webseite duplizieren (Beta - funktioniert innerhalb einer einzelnen Webseite von Multisite)"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:152
+#: includes/tbb-backupbuddy-2x.php:153
+#: includes/tbb-backupbuddy.php:137
 msgid "Import Site (Beta)"
 msgstr "Webseite importieren (Beta)"
 
 #@ toolbar-buddy
-#: includes/tbb-backupbuddy.php:154
+#: includes/tbb-backupbuddy-2x.php:155
+#: includes/tbb-backupbuddy.php:139
 msgctxt "Translators: For the tooltip"
 msgid "Import Site (Beta)"
 msgstr "Webseite importieren (Beta - funktioniert aus dem Multisite-Dashboard heraus!)"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:333
-#: toolbar-buddy.php:335
+#: includes/tbb-iresources.php:40
+#: includes/tbb-iresources.php:42
 msgid "Builder Community Blog"
 msgstr "Builder Community Blog"
 
 #@ toolbar-buddy
-#: toolbar-buddy.php:385
-#: toolbar-buddy.php:387
+#: includes/tbb-iresources.php:92
+#: includes/tbb-iresources.php:94
 msgid "Builder Tutorials"
 msgstr "Builder Anleitungen"
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:32
+#: includes/tbb-admin.php:35
 msgid "Go to the Builder settings page"
 msgstr "Zur Builder Einstellungen-Seite..."
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:32
+#: includes/tbb-admin.php:35
 msgid "Builder"
 msgstr "Builder"
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:38
+#: includes/tbb-admin.php:42
 msgid "Go to the LoopBuddy settings page"
 msgstr "Zur LoopBuddy Einstellungen-Seite..."
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:38
+#: includes/tbb-admin.php:42
 msgid "Loops"
 msgstr "Loops"
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:44
+#: includes/tbb-admin.php:56
 msgid "Go to the BackupBuddy settings page"
 msgstr "Zur BackupBuddy Einstellungen-Seite..."
 
 #@ toolbar-buddy
-#: includes/tbb-admin.php:44
+#: includes/tbb-admin.php:56
 msgid "Backups"
 msgstr "Datensicherung"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:250
-#: includes/tbb-ithemesbuilder.php:252
+#: includes/tbb-ithemesbuilder.php:260
+#: includes/tbb-ithemesbuilder.php:262
 msgid "All Events"
 msgstr "Veranstaltungen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:256
-#: includes/tbb-ithemesbuilder.php:258
+#: includes/tbb-ithemesbuilder.php:266
+#: includes/tbb-ithemesbuilder.php:268
 msgid "Add new Event"
 msgstr "Neue Veranstaltung hinzufügen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:262
+#: includes/tbb-ithemesbuilder.php:272
 msgid "Start Here"
 msgstr "Benutzeranleitung"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:264
+#: includes/tbb-ithemesbuilder.php:274
 msgctxt "Translators: For the tooltip"
 msgid "Start Here - User Guide"
 msgstr "Benutzeranleitung für Builder Inhaltsblock 'Veranstaltungen'"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:268
-#: includes/tbb-ithemesbuilder.php:288
+#: includes/tbb-ithemesbuilder.php:280
+#: includes/tbb-ithemesbuilder.php:303
 msgid "Settings"
 msgstr "Einstellungen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:270
+#: includes/tbb-ithemesbuilder.php:282
 msgctxt "Translators: For the tooltip"
 msgid "Settings for Events"
 msgstr "Einstellungen für Veranstaltungen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:276
+#: includes/tbb-ithemesbuilder.php:289
 msgid "All Venues"
 msgstr "Veranstaltungsorte"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:278
+#: includes/tbb-ithemesbuilder.php:291
 msgctxt "Translators: For the tooltip"
 msgid "All Venues - Event Locations"
 msgstr "Alle Veranstaltungsorte"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:282
-#: includes/tbb-ithemesbuilder.php:284
+#: includes/tbb-ithemesbuilder.php:295
+#: includes/tbb-ithemesbuilder.php:297
 msgid "Add new Venue"
 msgstr "Neuen Veranstaltungsort hinzufügen"
 
 #@ toolbar-buddy
-#: includes/tbb-ithemesbuilder.php:290
+#: includes/tbb-ithemesbuilder.php:305
 msgctxt "Translators: For the tooltip"
 msgid "Settings for Venues"
 msgstr "Einstellungen für Veranstaltungsorte"
 
 #@ toolbar-buddy
+#: includes/tbb-backupbuddy-resources.php:48
+#: includes/tbb-backupbuddy-resources.php:50
+msgid "BackupBuddy 3.0 Beta Testing"
+msgstr "BackupBuddy V3.0 Betatest"
+
+#@ toolbar-buddy
+#: includes/tbb-backupbuddy-resources.php:69
+#: includes/tbb-ithemesbuilder.php:204
+#: includes/tbb-loopbuddy.php:85
+msgid "Video Tutorials"
+msgstr "Video-Anleitungen"
+
+#@ toolbar-buddy
+#: includes/tbb-backupbuddy-resources.php:71
+msgctxt "Translators: For the tooltip"
+msgid "BackupBuddy Video Tutorials (YouTube Search)"
+msgstr "BackupBuddy Video-Anleitungen (YouTube-Suche)"
+
+#@ toolbar-buddy
+#: includes/tbb-backupbuddy.php:110
+msgctxt "Translators: For the tooltip"
+msgid "Manage Remote Destinations &amp; Archives"
+msgstr "Entfernte Ziele &amp; Archive verwalten"
+
+#@ toolbar-buddy
+#: includes/tbb-backupbuddy.php:114
+#: includes/tbb-backupbuddy.php:116
+msgid "Migrate &amp; Restore"
+msgstr "Migration &amp; Wiederherstellung"
+
+#@ toolbar-buddy
+#: includes/tbb-ithemesbuilder.php:206
+msgctxt "Translators: For the tooltip"
+msgid "Builder Video Tutorials (YouTube Search)"
+msgstr "iThemes Builder Video-Anleitungen (YouTube-Suche)"
+
+#@ toolbar-buddy
+#: includes/tbb-loopbuddy.php:87
+msgctxt "Translators: For the tooltip"
+msgid "LoopBuddy Video Tutorials (YouTube Search)"
+msgstr "LoopBuddy Video-Anleitungen (YouTube-Suche)"
+
+#@ toolbar-buddy
 #. translators: plugin header field 'Version'
 #: toolbar-buddy.php:0
-msgid "1.2"
-msgstr "1.2"
+msgid "1.3"
+msgstr "1.3"
 

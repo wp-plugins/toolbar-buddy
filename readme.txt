@@ -4,7 +4,7 @@ Donate link: http://genesisthemes.de/en/donate/
 Tags: toolbar, tool bar, adminbar, admin bar, ithemes, builder, framework, pluginbuddy, backupbuddy, loopbuddy, displaybuddy, administration, resources, links, theme, settings, manage, deckerweb, ddwtoolbar
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 
@@ -13,26 +13,27 @@ This plugin adds useful admin links and resources for iThemes Builder and popula
 == Description ==
 
 = Have Quicker Access - Time Saver! =
-This **small and lightweight plugin** just adds a lot of iThemes Builder and PluginBuddy related resources to your toolbar / admin bar. Also links to all settings pages of Builder and PluginBuddy plugins are added, making life for webmasters (a.k.a. Admins and Super Admins) a lot easier. So you might just switch from the frontend of your site to the Builder 'Layouts' or adjust the schedule for 'BackupBuddy Backups' etc.
+This **small and lightweight plugin** just adds a lot of *iThemes Builder* and *PluginBuddy* related resources to your toolbar / admin bar. Also links to all settings pages of *Builder* and *PluginBuddy* plugins are added, making life for webmasters (a.k.a. Admins and Super Admins) a lot easier. So you might just switch from the frontend of your site to the *Builder* 'Layouts' or adjust the schedule for 'BackupBuddy Backups' etc.
 
-As the name suggests this plugin is **intended towards site admins and super admins**. The new admin bar entries will only be displayed if the current user has a proper WordPress capability originally required by Builder or the supported plugins. And yes, **Toolbar Buddy supports Multisite installs** which is especially useful for BackupBuddy... :-)
+As the name suggests this plugin is **intended towards site admins and super admins**. The new admin bar entries will only be displayed if the current user has a proper WordPress capability originally required by *Builder* or the supported plugins. And yes, **Toolbar Buddy supports Multisite installs** which is especially useful for *BackupBuddy*... :-)
 
 = Features =
-* "iThemes Builder Framework" support
-* "BackupBuddy" plugin support (including Multisite features)
+* "iThemes Builder Framework" support (current 3.x branch!)
+* "BackupBuddy" plugin support, for current 2.x branch AND upcoming 3.x branch (currently beta!), including all Multisite features
 * "LoopBuddy" plugin support
 * "DisplayBuddy" plugin series support, including these 11 plugins: Accordion / Billboard / Carousel / Copious Comments / Featured Posts / Rotating Images / Rotating Text / Slides / Slideshow / Tipsy / Video Showcase
-* Great time saver for admins / super admins
+* Great time & clicks saver for admins / super admins
 * Only display toolbar and menu items for proper capabilities
 * Multisite compatible! (supports network-activation)
 * Resource/Support links for each module or plugin included!
-* 5 Hooks, 6 filters and 7 constants allow for special customizing/ branding purposes for the plugin's output. Great for developers doing client stuff or need this for other purposes. -- [See the FAQ section here](http://wordpress.org/extend/plugins/toolbar-buddy/faq/) for more info on that.
+* 5 Hooks, 6 filters and 9 constants allow for special customizing/ branding purposes for the plugin's output. Great for developers doing client stuff or need this for other purposes. -- [See the FAQ section here](http://wordpress.org/extend/plugins/toolbar-buddy/faq/) for more info on that.
 * Fully internationalized! Real-life tested and developed with international users in mind! Also supports update-secure custom language file (if you need special wording...)
 * Fully WPML compatible!
 * Fully optimized:
  * The already lightweight stuff only gets loaded if needed!
  * Toolbar Buddy consists of 4 modules: iThemes Builder stuff / BackupBuddy stuff / LoopBuddy stuff / DisplayBuddy stuff
  * If none of the supported stuff is activated nothing will be loaded or displayed!
+ * If resource links group is deactivated via constant, stuff won't be loaded!
  * Plugin's extra admin links load only within "wp-admin"!
 
 = Special Features =
@@ -64,13 +65,15 @@ As the name suggests this plugin is **intended towards site admins and super adm
 * Follow me on [my Facebook page](http://www.facebook.com/deckerweb.service)
 * Or follow me on [+David Decker](http://deckerweb.de/gplus) on Google Plus ;-)
 
-= More =
-* [Also see my other plugins](http://genesisthemes.de/en/wp-plugins/) or see [my WordPress.org profile page](http://profiles.wordpress.org/users/daveshine/)
+= Tips & More =
+* When using *Builder Block Events* with *Gravity Forms*, [you might want check out my "Gravity Forms Toolbar" plugin :)](http://wordpress.org/extend/plugins/gravity-forms-toolbar/)
+* Check out more great helper plugins for admins in [my WordPress Toolbar / Admin Bar plugin series...](http://wordpress.org/extend/plugins/tags/ddwtoolbar)
+* [Also see my other plugins](http://genesisthemes.de/en/wp-plugins/) or see [my WordPress.org profile page](http://profiles.wordpress.org/daveshine/)
 * Tip: [*GenesisFinder* - Find then create. Your Genesis Framework Search Engine.](http://genesisfinder.com/)
 
 == Installation ==
 
-1. Upload the entire `toolbar-buddy` folder to the `/wp-content/plugins/` directory
+1. Upload the entire `toolbar-buddy` folder to the `/wp-content/plugins/` directory -- or just upload the ZIP package via 'Plugins > Add New > Upload' in your WP Admin
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Look at your toolbar / admin bar for the "iBuddy" entry and enjoy using the new links there :)
 4. Go and manage your theme/framework and/or plugin settings - plus some content stuff :)
@@ -144,8 +147,11 @@ Yes, this is possible since version 1.2 of the plugin! You can remove the follow
 
 To achieve this add one, some or all of the following constants to your child theme's `functions.php` or similar file (or functionality plugin or whatever...):
 `
-/** Toolbar Buddy: Remove Child Theme/Skin Items */
+/** Toolbar Buddy: Remove all Builder Items */
 define( 'TBB_BUILDER_DISPLAY', FALSE );
+
+/** Toolbar Buddy: Remove Builder's Manage Content Items */
+define( 'TBB_BUILDER_MANAGE_CONTENT_DISPLAY', FALSE );
 
 /** Toolbar Buddy: Remove DisplayBuddy Items */
 define( 'TBB_DISPLAYBUDDY_DISPLAY', FALSE );
@@ -236,11 +242,25 @@ function custom_tbb_capability_all() {
 **tbb_filter_main_icon**
 
 * Default value: iThemes Logo default graphic from the plugin's "images" folder
-* 1 Predefined helper function:
+* 8 Predefined helper functions:
 `
+add_filter( 'tbb_filter_main_icon', '__tbb_icon_builder' );
+
+add_filter( 'tbb_filter_main_icon', '__tbb_icon_buildertwo' );
+
+add_filter( 'tbb_filter_main_icon', '__tbb_icon_pluginbuddy' );
+
+add_filter( 'tbb_filter_main_icon', '__tbb_icon_pluginbuddytwo' );
+
+add_filter( 'tbb_filter_main_icon', '__tbb_icon_displaybuddy' );
+
+add_filter( 'tbb_filter_main_icon', '__tbb_icon_loopbuddy' );
+
+add_filter( 'tbb_filter_main_icon', '__tbb_icon_backupbuddy' );
+
 add_filter( 'tbb_filter_main_icon', '__tbb_child_images_icon' );
 `
---> Where the helper function returns the icon file (`icon-tbb.png`) found in your current child theme's `/images/` subfolder
+--> Where the last helper function returns the icon file (`icon-tbb.png`) found in your current child theme's `/images/` subfolder
 
 * Example for using with child themes and Builder (or any other parent theme):
 `
@@ -318,15 +338,24 @@ All the custom & branding stuff code above can also be found as a Gist on GitHub
 
 == Screenshots ==
 
-1. Toolbar Buddy in action - a secondary level - "Builder" settings (running with WordPress 3.3+ here)
-2. Toolbar Buddy in action - a secondary level - "Builder" manage content, includes "Widget Contents" as well as dynamic support for the "Builder Blocks" plugins (running with WordPress 3.3+ here)
-3. Toolbar Buddy in action - a secondary level - "BackupBuddy" backups (running with WordPress 3.3+ here)
-4. Toolbar Buddy in action - a tertiary level - "DisplayBuddy" - "Accordion" management (running with WordPress 3.3+ here)
-5. Toolbar Buddy in action - a tertiary level - resources section - "Builder" Support/Codex (running with WordPress 3.3+ here)
-6. Toolbar Buddy in action - a tertiary level - resources section - iBuddy HQ (running with WordPress 3.3+ here)
-7. Toolbar Buddy in action on a Multisite install - showing with only "BackupBuddy" activated, full support for all Multisite extras of that plugin, including capabilities! (running with WordPress 3.3+ here)
+1. Toolbar Buddy in action - second level - "Builder" settings (running with WordPress 3.3+ here)
+2. Toolbar Buddy in action - second level - "Builder" manage content, includes "Widget Contents" as well as dynamic support for the "Builder Blocks" plugins (running with WordPress 3.3+ here)
+3. Toolbar Buddy in action - second level - "BackupBuddy" backups (running with WordPress 3.3+ here)
+4. Toolbar Buddy in action - third level - "DisplayBuddy" - "Accordion" management (running with WordPress 3.3+ here)
+5. Toolbar Buddy in action - third level - resources section - "Builder" Support/Codex (running with WordPress 3.3+ here)
+6. Toolbar Buddy in action - third level - resources section - iBuddy HQ (running with WordPress 3.3+ here)
+7. Toolbar Buddy in action on a Multisite install - showing with only "BackupBuddy 2.x" activated, full support for all Multisite extras of that plugin, including capabilities! (running with WordPress 3.3+ here)
 
 == Changelog ==
+
+= 1.3 (2012-05-23) =
+* *New features:*
+ * NEW: Added full support for new BackupBuddy 3.0 branch, currently in beta (so DON'T use on live sites!!).
+ * NEW: Added 7 new helper functions for the main item icon - including icons for Builder, PluginBuddy brand, DisplayBuddy, LoopBuddy and BackupBuddy. [(see FAQ here)](http://wordpress.org/extend/plugins/toolbar-buddy/faq/)
+ * NEW: Added a new constant for removing sections if needed, this time for the Builder-related "Manage Content" section. [(see FAQ here)](http://wordpress.org/extend/plugins/toolbar-buddy/faq/)
+ * NEW: Added video resource links for Builder, LoopBuddy and BackupBuddy to their specific resources sections.
+* CODE: Minor code/documentation tweaks and improvements, also improving performance if sections are removed.
+* UPDATE: Updated German translations and also the .pot file for all translators!
 
 = 1.2 (2012-05-04) =
 * *New features:*
@@ -352,6 +381,9 @@ All the custom & branding stuff code above can also be found as a Gist on GitHub
 
 == Upgrade Notice ==
 
+= 1.3 =
+Several additions & improvements: Added BackupBuddy 3.x support! Added 7 helper functions for main item icon. Code tweaks & improvements. Also, updated German translations plus .pot file for all translators.
+
 = 1.2 =
 Several additions & improvements: Added "Builder Block Events" support! Also added hooks, filters, constants for customizing/branding purposes. Further, updated German translations plus .pot file for all translators.
 
@@ -360,6 +392,16 @@ Disabled the removal of original "Builder" toolbar item - by user request! Corre
 
 = 1.0 =
 Just released into the wild.
+
+== Plugin Links ==
+* [Translations (GlotPres)](http://translate.wpautobahn.com/projects/wordpress-plugins-deckerweb/toolbar-buddy)
+* [User support forums](http://wordpress.org/support/plugin/toolbar-buddy)
+* [Developers: customization codes (GitHub Gist)](https://gist.github.com/2597157)
+* *Plugin tip 1:* [My "Gravity Forms Toolbar"](http://wordpress.org/extend/plugins/gravity-forms-toolbar/) - great, when using *Gravity Forms*, especially with *Builder Block Events* :)
+* *Plugin tip 2:* [My WordPress Toolbar / Admin Bar plugin series...](http://wordpress.org/extend/plugins/tags/ddwtoolbar)
+
+== Donate ==
+Enjoy using *Toolbar Buddy*? Please consider [making a small donation](http://genesisthemes.de/en/donate/) to support the project's continued development.
 
 == Translations ==
 

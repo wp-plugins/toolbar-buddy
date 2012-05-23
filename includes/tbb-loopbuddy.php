@@ -1,6 +1,6 @@
 <?php
 /**
- * Display links for active LoopBuddy plugin
+ * Display links for active LoopBuddy plugin.
  *
  * @package    Toolbar Buddy
  * @subpackage PluginBuddy Plugins Support
@@ -61,7 +61,7 @@
 	$menu_items['irsloopbgroup'] = array(
 		'parent' => $iresourcegroup,
 		'title'  => __( 'LoopBuddy Support &amp; Docs', 'toolbar-buddy' ),
-		'href'   => '#',
+		'href'   => false,
 		'meta'   => array( 'title' => _x( 'LoopBuddy Support &amp; Docs', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 	);
 
@@ -79,4 +79,10 @@
 			'title'  => __( 'LoopBuddy Codex', 'toolbar-buddy' ),
 			'href'   => 'http://ithemes.com/codex/page/LoopBuddy',
 			'meta'   => array( 'title' => _x( 'LoopBuddy Codex &amp; Documentation', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+		);
+		$menu_items['loopbuddyvideos'] = array(
+			'parent' => $irsloopbgroup,
+			'title'  => __( 'Video Tutorials', 'toolbar-buddy' ),
+			'href'   => esc_url( TBB_VTUTORIALS_LOOPBUDDY ),
+			'meta'   => array( 'title' => _x( 'LoopBuddy Video Tutorials (YouTube Search)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 		);
