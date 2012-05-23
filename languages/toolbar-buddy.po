@@ -1,13 +1,26 @@
 # This file is distributed under the same license as the Toolbar Buddy package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2012-05-23 09:22:44+0000\n"
+"PO-Revision-Date: 2012-05-23 12:11:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Toolbar Buddy\n"
+
+#: includes/tbb-backupbuddy.php:134
+msgid "Export Site"
+msgstr ""
+
+#: includes/tbb-backupbuddy.php:136
+msgctxt "Translators: For the tooltip"
+msgid "Export Site"
+msgstr ""
+
+#: toolbar-buddy.php:0
+msgid "1.3.1"
+msgstr ""
 
 #: includes/tbb-backupbuddy-resources.php:48
 #: includes/tbb-backupbuddy-resources.php:50
@@ -24,12 +37,12 @@ msgctxt "Translators: For the tooltip"
 msgid "BackupBuddy Video Tutorials (YouTube Search)"
 msgstr ""
 
-#: includes/tbb-backupbuddy.php:110
+#: includes/tbb-backupbuddy.php:90
 msgctxt "Translators: For the tooltip"
 msgid "Manage Remote Destinations &amp; Archives"
 msgstr ""
 
-#: includes/tbb-backupbuddy.php:114 includes/tbb-backupbuddy.php:116
+#: includes/tbb-backupbuddy.php:94 includes/tbb-backupbuddy.php:96
 msgid "Migrate &amp; Restore"
 msgstr ""
 
@@ -43,57 +56,53 @@ msgctxt "Translators: For the tooltip"
 msgid "LoopBuddy Video Tutorials (YouTube Search)"
 msgstr ""
 
-#: toolbar-buddy.php:0
-msgid "1.3"
-msgstr ""
-
 #: includes/tbb-backupbuddy-2x.php:52 includes/tbb-backupbuddy-2x.php:54
-#: includes/tbb-backupbuddy.php:51 includes/tbb-backupbuddy.php:53
+#: includes/tbb-backupbuddy.php:26 includes/tbb-backupbuddy.php:28
 msgid "BackupBuddy Tools"
 msgstr ""
 
 #: includes/tbb-backupbuddy-2x.php:58 includes/tbb-backupbuddy-2x.php:60
-#: includes/tbb-backupbuddy.php:57 includes/tbb-backupbuddy.php:59
+#: includes/tbb-backupbuddy.php:37 includes/tbb-backupbuddy.php:39
 msgid "BackupBuddy Settings"
 msgstr ""
 
 #: includes/tbb-backupbuddy-2x.php:64 includes/tbb-backupbuddy-2x.php:66
-#: includes/tbb-backupbuddy.php:63 includes/tbb-backupbuddy.php:65
+#: includes/tbb-backupbuddy.php:43 includes/tbb-backupbuddy.php:45
 msgid "Scheduling"
 msgstr ""
 
 #: includes/tbb-backupbuddy-2x.php:70 includes/tbb-backupbuddy-2x.php:72
-#: includes/tbb-backupbuddy.php:69 includes/tbb-backupbuddy.php:71
+#: includes/tbb-backupbuddy.php:49 includes/tbb-backupbuddy.php:51
 msgid "Run Malware Scan"
 msgstr ""
 
 #: includes/tbb-backupbuddy-2x.php:76 includes/tbb-backupbuddy-2x.php:78
-#: includes/tbb-backupbuddy.php:75 includes/tbb-backupbuddy.php:77
+#: includes/tbb-backupbuddy.php:55 includes/tbb-backupbuddy.php:57
 msgid "Web Server Info"
 msgstr ""
 
 #: includes/tbb-backupbuddy-2x.php:82 includes/tbb-backupbuddy-2x.php:84
-#: includes/tbb-backupbuddy.php:81 includes/tbb-backupbuddy.php:83
+#: includes/tbb-backupbuddy.php:61 includes/tbb-backupbuddy.php:63
 msgid "BackupBuddy: Getting Started"
 msgstr ""
 
 #: includes/tbb-backupbuddy-2x.php:91 includes/tbb-backupbuddy-2x.php:93
-#: includes/tbb-backupbuddy.php:90 includes/tbb-backupbuddy.php:92
+#: includes/tbb-backupbuddy.php:70 includes/tbb-backupbuddy.php:72
 msgid "Backup &amp; Restore"
 msgstr ""
 
 #: includes/tbb-backupbuddy-2x.php:97 includes/tbb-backupbuddy-2x.php:99
-#: includes/tbb-backupbuddy.php:96 includes/tbb-backupbuddy.php:98
+#: includes/tbb-backupbuddy.php:76 includes/tbb-backupbuddy.php:78
 msgid "Run Database Backup"
 msgstr ""
 
 #: includes/tbb-backupbuddy-2x.php:103 includes/tbb-backupbuddy-2x.php:105
-#: includes/tbb-backupbuddy.php:102 includes/tbb-backupbuddy.php:104
+#: includes/tbb-backupbuddy.php:82 includes/tbb-backupbuddy.php:84
 msgid "Run FULL Backup"
 msgstr ""
 
 #: includes/tbb-backupbuddy-2x.php:109 includes/tbb-backupbuddy-2x.php:111
-#: includes/tbb-backupbuddy.php:108
+#: includes/tbb-backupbuddy.php:88
 msgid "Edit external Destinations"
 msgstr ""
 
@@ -585,15 +594,15 @@ msgstr ""
 msgid "Official Blog"
 msgstr ""
 
-#: toolbar-buddy.php:400
+#: toolbar-buddy.php:397
 msgid "German language files"
 msgstr ""
 
-#: toolbar-buddy.php:433
+#: toolbar-buddy.php:430
 msgid "iBuddy"
 msgstr ""
 
-#: toolbar-buddy.php:436
+#: toolbar-buddy.php:433
 msgctxt "Translators: For the tooltip"
 msgid "iBuddy"
 msgstr ""
@@ -697,16 +706,16 @@ msgctxt "Translators: For the tooltip"
 msgid "iThemes Builder and PluginBuddy News Planet (official and community news via FriendFeed service)"
 msgstr ""
 
-#: toolbar-buddy.php:402
+#: toolbar-buddy.php:399
 msgctxt "Translators: For the tooltip"
 msgid "German language files for iThemes Builder Framework and PluginBuddy Plugins"
 msgstr ""
 
-#: includes/tbb-backupbuddy-2x.php:124 includes/tbb-backupbuddy.php:129
+#: includes/tbb-backupbuddy-2x.php:124 includes/tbb-backupbuddy.php:115
 msgid "Multsite Extras"
 msgstr ""
 
-#: includes/tbb-backupbuddy-2x.php:126 includes/tbb-backupbuddy.php:131
+#: includes/tbb-backupbuddy-2x.php:126 includes/tbb-backupbuddy.php:117
 msgctxt "Translators: For the tooltip"
 msgid "Multsite Extras"
 msgstr ""
@@ -729,11 +738,11 @@ msgctxt "Translators: For the tooltip"
 msgid "Duplicate Site (Beta)"
 msgstr ""
 
-#: includes/tbb-backupbuddy-2x.php:153 includes/tbb-backupbuddy.php:137
+#: includes/tbb-backupbuddy-2x.php:153 includes/tbb-backupbuddy.php:124
 msgid "Import Site (Beta)"
 msgstr ""
 
-#: includes/tbb-backupbuddy-2x.php:155 includes/tbb-backupbuddy.php:139
+#: includes/tbb-backupbuddy-2x.php:155 includes/tbb-backupbuddy.php:126
 msgctxt "Translators: For the tooltip"
 msgid "Import Site (Beta)"
 msgstr ""

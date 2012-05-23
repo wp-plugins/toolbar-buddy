@@ -4,7 +4,7 @@ Donate link: http://genesisthemes.de/en/donate/
 Tags: toolbar, tool bar, adminbar, admin bar, ithemes, builder, framework, pluginbuddy, backupbuddy, loopbuddy, displaybuddy, administration, resources, links, theme, settings, manage, deckerweb, ddwtoolbar
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 1.3
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 
@@ -348,6 +348,11 @@ All the custom & branding stuff code above can also be found as a Gist on GitHub
 
 == Changelog ==
 
+= 1.3.1 (2012-05-23) =
+* UPDATE: For *BackupBuddy 3.x* branch: Properly implemented the "Export Site" feature for 'admininstrator' user roles in Multisite installs, correspondending with the setting in BackupBuddy. --- This feature was somehow forgotten in the v1.3 release, sorry folks! :)
+* UPDATE: Improved overall capability checks for the *BackupBuddy 3.x* branch.
+* UPDATE: Updated German translations and also the .pot file for all translators!
+
 = 1.3 (2012-05-23) =
 * *New features:*
  * NEW: Added full support for new BackupBuddy 3.0 branch, currently in beta (so DON'T use on live sites!!).
@@ -380,6 +385,9 @@ All the custom & branding stuff code above can also be found as a Gist on GitHub
 * Including support for 13 plugins of PluginBuddy brand
 
 == Upgrade Notice ==
+
+= 1.3.1 =
+Several additions & improvements: Added BackupBuddy 3.x support! Added 7 helper functions for main item icon. Code tweaks & improvements. Also, updated German translations plus .pot file for all translators.
 
 = 1.3 =
 Several additions & improvements: Added BackupBuddy 3.x support! Added 7 helper functions for main item icon. Code tweaks & improvements. Also, updated German translations plus .pot file for all translators.
