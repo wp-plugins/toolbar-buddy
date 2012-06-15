@@ -15,6 +15,21 @@
  */
 
 /**
+ * Setting internal plugin helper links constants
+ *
+ * @since 1.3.2
+ */
+define( 'TBB_URL_TRANSLATE',		'http://translate.wpautobahn.com/projects/wordpress-plugins-deckerweb/toolbar-buddy' );
+define( 'TBB_URL_WPORG_FAQ',		'http://wordpress.org/extend/plugins/toolbar-buddy/faq/' );
+define( 'TBB_URL_WPORG_FORUM',		'http://wordpress.org/support/plugin/toolbar-buddy' );
+if ( get_locale() == 'de_DE' || get_locale() == 'de_AT' || get_locale() == 'de_CH' || get_locale() == 'de_LU' ) {
+	define( 'TBB_URL_DONATE', 	'http://genesisthemes.de/spenden/' );
+} else {
+	define( 'TBB_URL_DONATE', 	'http://genesisthemes.de/en/donate/' );
+}
+
+
+/**
  * Add "Settings" links to plugin page
  *
  * @since 1.2
@@ -75,6 +90,7 @@ add_filter( 'plugin_row_meta', 'ddw_tbb_plugin_links', 10, 2 );
  * Add various support links to plugin page
  *
  * @since 1.0
+ * @version 1.1
  *
  * @param  $tbb_links
  * @param  $tbb_file
@@ -86,9 +102,10 @@ function ddw_tbb_plugin_links( $tbb_links, $tbb_file ) {
 		return $tbb_links;
 
 	if ( $tbb_file == TBB_PLUGIN_BASEDIR . '/toolbar-buddy.php' ) {
-		$tbb_links[] = '<a href="http://wordpress.org/extend/plugins/toolbar-buddy/faq/" target="_new" title="' . __( 'FAQ', 'toolbar-buddy' ) . '">' . __( 'FAQ', 'toolbar-buddy' ) . '</a>';
-		$tbb_links[] = '<a href="http://wordpress.org/support/plugin/toolbar-buddy" target="_new" title="' . __( 'Support', 'toolbar-buddy' ) . '">' . __( 'Support', 'toolbar-buddy' ) . '</a>';
-		$tbb_links[] = '<a href="' . __( 'http://genesisthemes.de/en/donate/', 'toolbar-buddy' ) . '" target="_new" title="' . __( 'Donate', 'toolbar-buddy' ) . '">' . __( 'Donate', 'toolbar-buddy' ) . '</a>';
+		$tbb_links[] = '<a href="' . TBB_URL_WPORG_FAQ . '" target="_new" title="' . __( 'FAQ', 'toolbar-buddy' ) . '">' . __( 'FAQ', 'toolbar-buddy' ) . '</a>';
+		$tbb_links[] = '<a href="' . TBB_URL_WPORG_FORUM . '" target="_new" title="' . __( 'Support', 'toolbar-buddy' ) . '">' . __( 'Support', 'toolbar-buddy' ) . '</a>';
+		$tbb_links[] = '<a href="' . TBB_URL_TRANSLATE . '" target="_new" title="' . __( 'Translations', 'toolbar-buddy' ) . '">' . __( 'Translations', 'toolbar-buddy' ) . '</a>';
+		$tbb_links[] = '<a href="' . TBB_URL_DONATE . '" target="_new" title="' . __( 'Donate', 'toolbar-buddy' ) . '">' . __( 'Donate', 'toolbar-buddy' ) . '</a>';
 	}
 
 	return $tbb_links;

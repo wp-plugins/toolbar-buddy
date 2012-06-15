@@ -12,7 +12,7 @@
  * Plugin Name: Toolbar Buddy
  * Plugin URI: http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
  * Description: This plugin adds useful admin links and resources for iThemes Builder and popular PluginBuddy plugins to the WordPress Toolbar / Admin Bar.
- * Version: 1.3.1
+ * Version: 1.3.2
  * Author: David Decker - DECKERWEB
  * Author URI: http://deckerweb.de/
  * License: GPLv2 or later
@@ -535,7 +535,7 @@ dirname( __FILE__ ) ) );
 		#wpadminbar .ab-top-menu > li.menupop.icon-ibuddy.hover > .ab-item,
 		#wpadminbar.nojs .ab-top-menu > li.menupop.icon-ibuddy > .ab-item,
 		#wpadminbar .ab-top-menu > li.menupop.icon-ibuddy > .ab-item {
-      			background-image: url(<?php echo $tbb_main_icon; ?>);
+      			background-image: url(<?php echo esc_url_raw( $tbb_main_icon ); ?>);
 			background-repeat: no-repeat;
 			background-position: 0.85em 50%;
 			padding-left: 30px;

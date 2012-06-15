@@ -4,7 +4,7 @@ Donate link: http://genesisthemes.de/en/donate/
 Tags: toolbar, tool bar, adminbar, admin bar, ithemes, builder, framework, pluginbuddy, backupbuddy, loopbuddy, displaybuddy, administration, resources, links, theme, settings, manage, deckerweb, ddwtoolbar
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 
@@ -47,7 +47,7 @@ As the name suggests this plugin is **intended towards site admins and super adm
 * "Builder Style Manager"
 * "Builder SEO"
 * "Builder Block Events" (post types for Events and Venues - "Builder" needs to be activated first!)
-* "Builder Block Church" (post types for Sermons and Staff Members - only useful if "Builder" Child Theme supports it)
+* "Builder Block Church" (post types for Sermons and Staff Members - "Builder" needs to be activated first!)
 * "Builder Block Restaurant" (post types for Menu Items and Locations - only useful if "Builder" Child Theme supports it)
 
 = Localization =
@@ -348,6 +348,12 @@ All the custom & branding stuff code above can also be found as a Gist on GitHub
 
 == Changelog ==
 
+= 1.3.2 (2012-06-15) =
+* *Maintenance release.*
+* UPDATE: Small improvement for BackupBuddy 3.x branch: improved check in Multisite for allowing export to 'administrators' (However, it's recommended to re-save this special setting in BackupBuddy admin if you previously had used their beta version!)
+* CODE: Minor code/documentation tweaks and improvements.
+* UPDATE: Updated German translations and also the .pot file for all translators!
+
 = 1.3.1 (2012-05-23) =
 * UPDATE: For *BackupBuddy 3.x* branch: Properly implemented the "Export Site" feature for 'admininstrator' user roles in Multisite installs, correspondending with the setting in BackupBuddy. --- This feature was somehow forgotten in the v1.3 release, sorry folks! :)
 * UPDATE: Improved overall capability checks for the *BackupBuddy 3.x* branch.
@@ -386,6 +392,9 @@ All the custom & branding stuff code above can also be found as a Gist on GitHub
 
 == Upgrade Notice ==
 
+= 1.3.2 =
+Maintenance release: Improvements for Multisite support with BackupBuddy 3.x branch. Also, updated German translations plus .pot file for all translators.
+
 = 1.3.1 =
 Several additions & improvements: Added BackupBuddy 3.x support! Added 7 helper functions for main item icon. Code tweaks & improvements. Also, updated German translations plus .pot file for all translators.
 
@@ -417,7 +426,7 @@ Enjoy using *Toolbar Buddy*? Please consider [making a small donation](http://ge
 * German: Deutsch - immer dabei! [Download auch via deckerweb.de](http://deckerweb.de/material/sprachdateien/ithemes-und-pluginbuddy/#toolbar-buddy)
 * For custom and update-secure language files please upload them to `/wp-content/languages/toolbar-buddy/` (just create this folder) - This enables you to use fully custom translations that won't be overridden on plugin updates. Also, complete custom English wording is possible with that as well, just use a language file like `toolbar-buddy-en_US.mo/.po` to achieve that (for creating one see the following tools).
 
-**Easy plugin translation platform with GlotPress tool: [Translate "Toolbar Buddy"...](http://translate.wpautobahn.com/projects/wordpress-plugins-deckerweb/toolbar-buddy)**
+**Easy plugin translation platform with GlotPress tool:** [**Translate "Toolbar Buddy"...**](http://translate.wpautobahn.com/projects/wordpress-plugins-deckerweb/toolbar-buddy)
 
 *Note:* All my plugins are internationalized/ translateable by default. This is very important for all users worldwide. So please contribute your language to the plugin to make it even more useful. For translating I recommend the awesome ["Codestyling Localization" plugin](http://wordpress.org/extend/plugins/codestyling-localization/) and for validating the ["Poedit Editor"](http://www.poedit.net/), which works fine on Windows, Mac and Linux.
 

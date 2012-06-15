@@ -128,7 +128,7 @@
 			}  // end-if cap check
 
 			/** BackupBuddy 3.x Multisite Export */
-			if ( current_user_can( 'activate_plugins' ) && ( pb_backupbuddy::$options[ 'multisite_export' ] == '1' ) ) {
+			if ( current_user_can( 'activate_plugins' ) && ( ( pb_backupbuddy::$options[ 'multisite_export' ] == '1' ) || ( $multisite_export == '1' ) ) ) {
 				$menu_items['backupbuddymsextras-export'] = array(
 					'parent' => $backupbuddymsextras,
 					'title'  => __( 'Export Site', 'toolbar-buddy' ),
