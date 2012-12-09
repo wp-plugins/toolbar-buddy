@@ -8,10 +8,9 @@
  * @copyright  Copyright 2012, David Decker - DECKERWEB
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
- * @link       http://twitter.com/#!/deckerweb
+ * @link       http://twitter.com/deckerweb
  *
- * @since 1.0
- * @version 1.2
+ * @since 1.0.0
  */
 
 /**
@@ -20,7 +19,7 @@
  *
  * Usage: define( 'TBB_REMOVE_BUILDER_ORIGINAL_TOOLBAR', TRUE );
  *
- * @since 1.2
+ * @since 1.2.0
  */
 if ( defined( 'TBB_REMOVE_BUILDER_ORIGINAL_TOOLBAR' ) && TBB_REMOVE_BUILDER_ORIGINAL_TOOLBAR ) {
 
@@ -28,7 +27,7 @@ if ( defined( 'TBB_REMOVE_BUILDER_ORIGINAL_TOOLBAR' ) && TBB_REMOVE_BUILDER_ORIG
 	/**
 	 * Remove original Builder toolbar items
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 */
 	function ddw_tbb_remove_builder_original() {
 
@@ -43,14 +42,14 @@ if ( defined( 'TBB_REMOVE_BUILDER_ORIGINAL_TOOLBAR' ) && TBB_REMOVE_BUILDER_ORIG
 /**
  * Check for theme support for "builder-my-theme-menu"
  *
- * @since 1.0
+ * @since 1.0.0
  */
 if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 
 	/**
 	 * Display Builder settings links
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 
 		/** Builder Settings & Layouts section */
@@ -214,13 +213,13 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 /**
  * Additional Builder-specific plugins hook in
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 	/**
 	 * Builder Style Manager
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	if ( ( ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'builder-style-manager/init.php' ) ) || function_exists( 'it_builder_style_manager_init' ) ) && ( current_theme_supports( 'builder-my-theme-menu' ) && current_user_can( 'switch_themes' ) ) ) {
 		$menu_items['builder-stylemanager'] = array(
@@ -235,7 +234,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 	/**
 	 * Builder SEO & Meta
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	if ( ( ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'builder-seo-plugin/init.php' ) ) || function_exists( 'it_builder_seo_plugin_init' ) ) && ( current_theme_supports( 'builder-my-theme-menu' ) && current_user_can( 'switch_themes' ) ) ) {
 		$menu_items['builder-seometa'] = array(
@@ -250,7 +249,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 	/**
 	 * Builder Block - Events
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 */
 	if ( ( ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'builder-block-events/init.php' ) ) || class_exists( 'BB_Events' ) ) && ( current_theme_supports( 'builder-my-theme-menu' ) && current_user_can( 'edit_posts' ) ) ) {
 
@@ -312,7 +311,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 	/**
 	 * Builder Block - Church
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	if ( ( ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'builder-block-church/init.php' ) ) || function_exists( 'it_builder_block_church_init' ) ) && ( current_theme_supports( 'builder-my-theme-menu' ) && current_user_can( 'edit_posts' ) ) ) {
 
@@ -368,7 +367,7 @@ if ( current_theme_supports( 'builder-my-theme-menu' ) ) {
 	/**
 	 * Builder Block - Restaurant
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	if ( ( ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'builder-block-restaurant/init.php' ) ) || function_exists( 'it_builder_block_restaurant_init' ) ) && ( current_theme_supports( 'builder-my-theme-menu' ) && current_user_can( 'edit_posts' ) ) ) {
 

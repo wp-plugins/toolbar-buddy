@@ -3,20 +3,20 @@
  * Display links for active LoopBuddy plugin.
  *
  * @package    Toolbar Buddy
- * @subpackage PluginBuddy Plugins Support
+ * @subpackage iThemes Plugins Support
  * @author     David Decker - DECKERWEB
  * @copyright  Copyright 2012, David Decker - DECKERWEB
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
- * @link       http://twitter.com/#!/deckerweb
+ * @link       http://twitter.com/deckerweb
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 /**
  * Display LoopBuddy settings links
  *
- * @since 1.0
+ * @since 1.0.0
  */
 	/** LoopBuddy Settings section */
 	$menu_items['loopbuddysettings'] = array(

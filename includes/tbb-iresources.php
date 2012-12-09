@@ -8,10 +8,9 @@
  * @copyright  Copyright 2012, David Decker - DECKERWEB
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
- * @link       http://twitter.com/#!/deckerweb
+ * @link       http://twitter.com/deckerweb
  *
- * @since 1.0
- * @version 1.1
+ * @since 1.0.0
  */
 
 /** Set filter for "iBuddy HQ" string */
@@ -41,16 +40,10 @@ $iresourcegroup_menu_items = array(
 		'href'   => 'http://ithemesbuilder.com/',
 		'meta'   => array( 'title' => __( 'Builder Community Blog', 'toolbar-buddy' ) )
 	),
-	'ibuddyblogs-pb' => array(
-		'parent' => $ibuddyblogs,
-		'title'  => __( 'PluginBuddy Blog', 'toolbar-buddy' ),
-		'href'   => 'http://pluginbuddy.com/category/blog/',
-		'meta'   => array( 'title' => __( 'PluginBuddy Blog', 'toolbar-buddy' ) )
-	),
 	'ibuddyblogs-webdesign' => array(
 		'parent' => $ibuddyblogs,
 		'title'  => __( 'WebDesign.com Blog', 'toolbar-buddy' ),
-		'href'   => 'http://webdesign.com/news',
+		'href'   => 'http://webdesign.com/news/',
 		'meta'   => array( 'title' => __( 'WebDesign.com Blog', 'toolbar-buddy' ) )
 	),
 	'ibuddyblogs-thediv' => array(
@@ -95,9 +88,9 @@ $iresourcegroup_menu_items = array(
 	),
 	'ibuddytutorials-pb' => array(
 		'parent' => $ibuddytutorials,
-		'title'  => __( 'PluginBuddy Tutorials', 'toolbar-buddy' ),
+		'title'  => __( 'Plugin Tutorials', 'toolbar-buddy' ),
 		'href'   => 'http://ithemes.com/codex/page/PluginBuddy',
-		'meta'   => array( 'title' => __( 'PluginBuddy Tutorials', 'toolbar-buddy' ) )
+		'meta'   => array( 'title' => __( 'Plugin Tutorials', 'toolbar-buddy' ) )
 	),
 	'ibuddytutorials-codex' => array(
 		'parent' => $ibuddytutorials,
@@ -112,12 +105,6 @@ $iresourcegroup_menu_items = array(
 		'title'  => __( 'iThemes FAQ', 'toolbar-buddy' ),
 		'href'   => 'http://ithemes.com/frequently-asked-questions/',
 		'meta'   => array( 'title' => __( 'iThemes FAQ', 'toolbar-buddy' ) )
-	),
-	'ibuddyfaqs-pb' => array(
-		'parent' => $ibuddyfaqs,
-		'title'  => __( 'PluginBuddy FAQ', 'toolbar-buddy' ),
-		'href'   => 'http://pluginbuddy.com/frequently-asked-questions/',
-		'meta'   => array( 'title' => __( 'PluginBuddy FAQ', 'toolbar-buddy' ) )
 	),
 
 	/** Members section */
@@ -143,9 +130,9 @@ $iresourcegroup_menu_items = array(
 	/** Free Plugins section */
 	'ibuddyfreeplugins' => array(
 		'parent' => $ibuddysites,
-		'title'  => __( 'Free PluginBuddy plugins', 'toolbar-buddy' ),
-		'href'   => 'http://pluginbuddy.com/free-wordpress-plugins/',
-		'meta'   => array( 'title' => __( 'Free PluginBuddy plugins', 'toolbar-buddy' ) )
+		'title'  => __( 'Free iThemes plugins', 'toolbar-buddy' ),
+		'href'   => 'http://ithemes.com/free-wordpress-plugins/',
+		'meta'   => array( 'title' => __( 'Free iThemes plugins', 'toolbar-buddy' ) )
 	),
 
 	/** News Planet section */
@@ -153,6 +140,6 @@ $iresourcegroup_menu_items = array(
 		'parent' => $ibuddysites,
 		'title'  => __( 'iBuddy News Planet', 'toolbar-buddy' ),
 		'href'   => 'http://friendfeed.com/ibuddy-news',
-		'meta'   => array( 'title' => _x( 'iThemes Builder and PluginBuddy News Planet (official and community news via FriendFeed service)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+		'meta'   => array( 'title' => _x( 'iThemes Builder and Plugin News Planet (official and community news via FriendFeed service)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 	),
 );  // end of array

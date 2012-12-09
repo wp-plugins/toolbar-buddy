@@ -3,52 +3,80 @@
  * Display links for active DisplayBuddy plugin.
  *
  * @package    Toolbar Buddy
- * @subpackage PluginBuddy Plugins Support
+ * @subpackage iThemes Plugins Support
  * @author     David Decker - DECKERWEB
  * @copyright  Copyright 2012, David Decker - DECKERWEB
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
- * @link       http://twitter.com/#!/deckerweb
+ * @link       http://twitter.com/deckerweb
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 /**
  * Display DisplayBuddy settings links
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 	/** Set default */
 	$dpb_slides_check = 0;
 
 	/** Slides-specific: Check for active DisplayBuddy modules */
-	if ( class_exists( 'pb_slides' ) && (
-			! class_exists( 'pluginbuddy_accordion' ) && 
-			! class_exists( 'iThemesBillboard' ) && 
-			! class_exists( 'pluginbuddy_carousel' ) && 
-			! class_exists( 'PluginBuddyCopiousComments' ) && 
-			! class_exists( 'PluginBuddyFeaturedPosts' ) && 
-			! class_exists( 'iThemesRotatingImages' ) && 
-			! class_exists( 'rotatingtext' ) && 
-			! class_exists( 'pluginbuddy_slideshow' ) && 
-			! class_exists( 'pluginbuddy_tipsy' ) && 
-			! class_exists( 'PluginBuddyVideoShowcase' )
+	if ( class_exists( 'pb_slides' )
+		&& (
+			! class_exists( 'pluginbuddy_accordion' )
+			&& ! class_exists( 'IT_Boom_Bar' )
+			&& ! class_exists( 'iThemesBillboard' )
+			&& ! class_exists( 'pluginbuddy_carousel' )
+			&& ! class_exists( 'PluginBuddyCopiousComments' )
+			&& ! class_exists( 'PluginBuddyFeaturedPosts' )
+			&& ! class_exists( 'iThemesRotatingImages' )
+			&& ! class_exists( 'rotatingtext' )
+			&& ! class_exists( 'pluginbuddy_slideshow' )
+			&& ! class_exists( 'pluginbuddy_tipsy' )
+			&& ! class_exists( 'PluginBuddyVideoShowcase' )
 		)
 	) {
+
         	$dpb_get_started = admin_url( 'admin.php?page=pb_DisplayBuddy_series' );
 		$dpb_slides_check = 'slides_only';
+
 	} else {
+
         	$dpb_get_started = admin_url( 'admin.php?page=pluginbuddy-displaybuddy' );
 		$dpb_slides_check = 'slides_together';
-	}
+
+	}  // end-if slides module check
+
+	/** BoomBar-specific: Check for active DisplayBuddy modules */
+	if ( class_exists( 'IT_Boom_Bar' )
+		&& (
+			! class_exists( 'pluginbuddy_accordion' )
+			&& ! class_exists( 'iThemesBillboard' )
+			&& ! class_exists( 'pluginbuddy_carousel' )
+			&& ! class_exists( 'PluginBuddyCopiousComments' )
+			&& ! class_exists( 'PluginBuddyFeaturedPosts' )
+			&& ! class_exists( 'iThemesRotatingImages' )
+			&& ! class_exists( 'rotatingtext' )
+			&& ! class_exists( 'pb_slides' )
+			&& ! class_exists( 'pluginbuddy_slideshow' )
+			&& ! class_exists( 'pluginbuddy_tipsy' )
+			&& ! class_exists( 'PluginBuddyVideoShowcase' )
+		)
+	) {
+
+		$dpb_get_started = false;
+
+	}  // end-if boombar module check
+
 
 	/** DisplayBuddy Start section */
 	$menu_items['displaybuddystart'] = array(
 		'parent' => $displaybgroup,
-		'title'  => __( 'DisplayBuddy Start', 'toolbar-buddy' ),
+		'title'  => ( $dpb_get_started ) ? __( 'DisplayBuddy Start', 'toolbar-buddy' ) : __( 'DisplayBuddy', 'toolbar-buddy' ),
 		'href'   => $dpb_get_started,
-		'meta'   => array( 'target' => '', 'title' => __( 'DisplayBuddy Start', 'toolbar-buddy' ) )
+		'meta'   => array( 'target' => '', 'title' => ( $dpb_get_started ) ? __( 'DisplayBuddy Start', 'toolbar-buddy' ) : __( 'DisplayBuddy', 'toolbar-buddy' ) )
 	);
 
 	/** Module: Accordion */
@@ -56,6 +84,7 @@
 
 		/** Accordion Content */
 		if ( current_user_can( 'edit_posts' ) ) {
+
 			$menu_items['dpbaccordion'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Accordions', 'toolbar-buddy' ),
@@ -68,17 +97,20 @@
 				'href'   => admin_url( 'post-new.php?post_type=pb_accordion_items' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Add new Accordion', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if accordion content
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpbaccordion-settings'] = array(
 				'parent' => $dpbaccordion,
 				'title'  => __( 'Accordion Settings', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=pluginbuddy_accordion-settings' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Accordion Settings', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
 
 		/** Support */
 		$menu_items['displaybuddysupport-accordion'] = array(
@@ -104,13 +136,15 @@
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-billboard'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Billboard', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=ithemes-billboard' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Billboard', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
 
 		/** Support */
 		$menu_items['displaybuddysupport-billboard'] = array(
@@ -131,18 +165,56 @@
 	}  // end-if Billboard
 
 
+	/** Module: iThemes Boom Bar */
+	if ( class_exists( 'IT_Boom_Bar' ) ) {
+
+		/** Settings */
+		if ( current_user_can( 'edit_posts' ) ) {
+
+			$menu_items['dpbboombar'] = array(
+				'parent' => $displaybuddystart,
+				'title'  => __( 'Boom Bars', 'toolbar-buddy' ),
+				'href'   => admin_url( 'edit.php?post_type=it_boom_bar' ),
+				'meta'   => array( 'target' => '', 'title' => __( 'Boom Bars', 'toolbar-buddy' ) )
+			);
+
+			$menu_items['dpbboombar-add'] = array(
+				'parent' => $dpbboombar,
+				'title'  => __( 'Add new Boom Bar', 'toolbar-buddy' ),
+				'href'   => admin_url( 'post-new.php?post_type=it_boom_bar' ),
+				'meta'   => array( 'target' => '', 'title' => __( 'Add new Boom Bar', 'toolbar-buddy' ) )
+			);
+
+		}  // end-if cap check
+
+		/** Support */
+		$menu_items['displaybuddysupport-boombar'] = array(
+			'parent' => $displaybuddysupport,
+			'title'  => __( 'BoomBar Forum', 'toolbar-buddy' ),
+			'href'   => 'http://ithemes.com/forum/forum/203-boombar/',
+			'meta'   => array( 'title' => __( 'BoomBar Forum', 'toolbar-buddy' ) )
+		);
+
+		/** Codex */
+		// @TODO: Not yet available at iThemes Docu wiki...
+
+	}  // end-if Boom Bar
+
+
 	/** Module: Carousel */
 	if ( class_exists( 'pluginbuddy_carousel' ) ) {
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-carousel'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Carousel', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=pluginbuddy_carousel-settings' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Carousel', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
 
 		/** Support */
 		$menu_items['displaybuddysupport-carousel'] = array(
@@ -168,13 +240,15 @@
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-copiuscomments'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'CopiusComments', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=pluginbuddy-copiouscomments-settings' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'CopiusComments', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
 
 		/** Support */
 		$menu_items['displaybuddysupport-tipsy'] = array(
@@ -200,13 +274,15 @@
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-featuredposts'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Featured Posts', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=pluginbuddy-featuredposts-settings' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Featured Posts', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
 
 		/** Support */
 		$menu_items['displaybuddysupport-featuredposts'] = array(
@@ -232,13 +308,16 @@
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-rotatingimages'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Rotating Images', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=ithemes-rotating-images' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Rotating Images', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
+
 		/** Support */
 		$menu_items['displaybuddysupport-rotatingimages'] = array(
 			'parent' => $displaybuddysupport,
@@ -263,13 +342,15 @@
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-rotatingtext'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Rotating Text', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=rotatingtext-settings' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Rotating Text', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
 
 		/** Support */
 		$menu_items['displaybuddysupport-rotatingtext'] = array(
@@ -295,28 +376,34 @@
 
 		/** Settings */
 		if ( ( $dpb_slides_check == 'slides_only' ) && current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-slides'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Slides', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=pb_slides_settings' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Slides', 'toolbar-buddy' ) )
 			);
+
 		} elseif ( $dpb_slides_check == 'slides_together' ) {
+
 			$menu_items['dpb-slides-start'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Slides: Getting Started', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=pb_DisplayBuddy_series' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Slides: Getting Started', 'toolbar-buddy' ) )
 			);
+
 			/** Settings */
 			if ( current_user_can( 'activate_plugins' ) ) {
+
 				$menu_items['dpb-slides-settings'] = array(
 					'parent' => $displaybuddystart,
 					'title'  => __( 'Slides: Settings', 'toolbar-buddy' ),
 					'href'   => admin_url( 'admin.php?page=pb_slides_settings' ),
 					'meta'   => array( 'target' => '', 'title' => __( 'Slides: Settings', 'toolbar-buddy' ) )
 				);
-			 }
+
+			 }  // end-if cap check
 
 		}  // end-if Slides check
 
@@ -344,13 +431,15 @@
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-slideshow'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Slideshow', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=pluginbuddy_slideshow-settings' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Slideshow', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
 
 		/** Support */
 		$menu_items['displaybuddysupport-slideshow'] = array(
@@ -376,13 +465,15 @@
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-tipsy'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Tipsy', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=pluginbuddy_tipsy-settings' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Tipsy', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
 
 		/** Support */
 		$menu_items['displaybuddysupport-tipsy'] = array(
@@ -408,13 +499,15 @@
 
 		/** Settings */
 		if ( current_user_can( 'activate_plugins' ) ) {
+
 			$menu_items['dpb-videoshowcase'] = array(
 				'parent' => $displaybuddystart,
 				'title'  => __( 'Video Showcase', 'toolbar-buddy' ),
 				'href'   => admin_url( 'admin.php?page=pluginbuddy-videoshowcase-settings' ),
 				'meta'   => array( 'target' => '', 'title' => __( 'Video Showcase', 'toolbar-buddy' ) )
 			);
-		}
+
+		}  // end-if cap check
 
 		/** Support */
 		$menu_items['displaybuddysupport-videoshowcase'] = array(

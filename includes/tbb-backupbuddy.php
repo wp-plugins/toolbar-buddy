@@ -3,23 +3,21 @@
  * Display links for active BackupBuddy 3.x plugin.
  *
  * @package    Toolbar Buddy
- * @subpackage PluginBuddy Plugins Support
+ * @subpackage iThemes Plugins Support
  * @author     David Decker - DECKERWEB
  * @copyright  Copyright 2012, David Decker - DECKERWEB
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
- * @link       http://twitter.com/#!/deckerweb
+ * @link       http://twitter.com/deckerweb
  *
- * @since 1.3
+ * @since 1.3.0
  */
 
 /**
  * Display BackupBuddy 3.x settings links
  *
- * @since 1.3
- * @version 1.1
+ * @since 1.3.0
  */
-
 	/** BackupBuddy 3.x Tools - Getting started */
 	$menu_items['backupbuddytools'] = array(
 		'parent' => $backupbgroup,
@@ -29,8 +27,8 @@
 	);
 
 	/** BackupBuddy 3.x Tools */
-	if ( ( is_multisite() && current_user_can( 'manage_network' ) ) ||
-			( ! is_multisite() && current_user_can( 'administrator' ) )
+	if ( ( is_multisite() && current_user_can( 'manage_network' ) )
+			|| ( ! is_multisite() && current_user_can( 'administrator' ) )
 	) {
 		$menu_items['backupbuddytools-settings'] = array(
 			'parent' => $backupbuddytools,
@@ -86,8 +84,8 @@
 		$menu_items['backupbuddyrun-destinations'] = array(
 			'parent' => $backupbuddyrun,
 			'title'  => __( 'Edit external Destinations', 'toolbar-buddy' ),
-			'href'   => admin_url( 'admin-ajax.php?action=pb_backupbuddy_destination_picker&TB_iframe=true&width=640&height=522' ),
-			'meta'   => array( 'class' => 'thickbox', 'title' => _x( 'Manage Remote Destinations &amp; Archives', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+			'href'   => network_admin_url( 'admin.php?page=pb_backupbuddy_destinations' ),
+			'meta'   => array( 'target' => '', 'title' => _x( 'Manage Remote Destinations &amp; Archives', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 		);
 		$menu_items['backupbuddytools-migraterestore'] = array(
 			'parent' => $backupbuddyrun,
@@ -102,11 +100,9 @@
 	/** BackupBuddy 3.x Multisite Extras section */
 	if ( is_multisite() ) {
 
-		//global $options;
-
 		/** Only for Super-Admins */
-		if ( ( current_user_can( 'manage_network' ) || is_super_admin() ) ||
-			( ( current_user_can( 'activate_plugins' ) ) && ( pb_backupbuddy::$options[ 'multisite_export' ] == '1' ) )
+		if ( ( current_user_can( 'manage_network' ) || is_super_admin() )
+			/* || ( ( current_user_can( 'activate_plugins' ) ) && ( pb_backupbuddy::$options[ 'multisite_export' ] == '1' ) ) */
 		) {
 
 			/** Multisite 3.x Main Entry */
@@ -128,7 +124,9 @@
 			}  // end-if cap check
 
 			/** BackupBuddy 3.x Multisite Export */
-			if ( current_user_can( 'activate_plugins' ) && ( ( pb_backupbuddy::$options[ 'multisite_export' ] == '1' ) || ( $multisite_export == '1' ) ) ) {
+			if ( ( current_user_can( 'activate_plugins' ) && current_user_can( 'manage_network' ) )
+				/* && ( ( pb_backupbuddy::$options[ 'multisite_export' ] == '1' ) || ( $multisite_export == '1' ) ) */
+			) {
 				$menu_items['backupbuddymsextras-export'] = array(
 					'parent' => $backupbuddymsextras,
 					'title'  => __( 'Export Site', 'toolbar-buddy' ),
@@ -139,8 +137,58 @@
 
 		}  // end-if is_super_admin
 
+
+		/**
+		 * In Multisite but for regular (site-wide) Admins
+		 *    - Currently not working with BackupBuddy v3.1.6.5
+		 */
+		if ( TBB_MULTISITE_EXTRAS_ADMIN
+			&& ! current_user_can( 'manage_network' )
+			&& ( current_user_can( 'administrator' ) /* || current_user_can( 'manage_options' ) || current_user_can( 'activate_plugins' ) */ )
+		) {
+
+			/** Multisite 3.x Main Entry - for Admins */
+			$menu_items['backupbuddymsextras'] = array(
+				'parent' => $backupbgroup,
+				'title'  => __( 'Multsite Extras', 'toolbar-buddy' ),
+				'href'   => 'http://ithemes.com/codex/page/BackupBuddy_Multisite',
+				'meta'   => array( 'title' => _x( 'Multsite Extras', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+			);
+
+			/** Malware Scan for Sup-Sites - for Admins */
+			$menu_items['backupbuddymsextras-admins-malwarescan'] = array(
+				'parent' => $backupbuddymsextras,
+				'title'  => __( 'Run Malware Scan', 'toolbar-buddy' ),
+				'href'   => admin_url( 'admin.php?page=pb_backupbuddy_malware_scan' ),
+				'meta'   => array( 'target' => '', 'title' => __( 'Run Malware Scan', 'toolbar-buddy' ) )
+			);
+
+			/** Remote Destinations - for Admins */
+			$menu_items['backupbuddymsextras-admin-destinations'] = array(
+				'parent' => $backupbuddymsextras,
+				'title'  => __( 'Edit external Destinations', 'toolbar-buddy' ),
+				'href'   => network_admin_url( 'admin.php?page=pb_backupbuddy_destinations' ),
+				'meta'   => array( 'target' => '', 'title' => _x( 'Manage Remote Destinations &amp; Archives', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+			);
+
+			/** BackupBuddy 3.x Multisite Export (only Sub-Sites!) - for Admins */
+			if ( '1' == pb_backupbuddy::$options[ 'multisite_export' ] ) {
+
+				$menu_items['backupbuddymsextras-admins-export'] = array(
+					'parent' => $backupbuddymsextras,
+					'title'  => __( 'Export Site', 'toolbar-buddy' ),
+					'href'   => admin_url( 'admin.php?page=pb_backupbuddy_multisite_export' ),
+					'meta'   => array( 'target' => '', 'title' => _x( 'Export Site', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+				);
+
+			}  // end-if cap check
+		
+		}  // end-if cap check admins
+
 	}  // end-if is_multisite
 
 
 	/** Include plugin file with BackupBuddy resources stuff */
-	require_once( TBB_PLUGIN_DIR . '/includes/tbb-backupbuddy-resources.php' );
+	if ( is_super_admin() ) {
+		require_once( TBB_PLUGIN_DIR . '/includes/tbb-backupbuddy-resources.php' );
+	}

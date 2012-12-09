@@ -8,22 +8,22 @@
  * @copyright  Copyright 2012, David Decker - DECKERWEB
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
- * @link       http://twitter.com/#!/deckerweb
+ * @link       http://twitter.com/deckerweb
  *
- * @since 1.2
+ * @since 1.2.0
  */
 
 /**
  * Helper functions for returning a few popular roles/capabilities.
  *
- * @since 1.2
+ * @since 1.2.0
  *
  * @return role/capability
  */
 	/**
 	 * Helper function for returning 'administrator' role/capability.
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 *
 	 * @return 'administrator' role
 	 */
@@ -35,7 +35,7 @@
 	/**
 	 * Helper function for returning 'editor' role/capability.
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 *
 	 * @return 'editor' role
 	 */
@@ -47,7 +47,7 @@
 	/**
 	 * Helper function for returning 'edit_theme_options' capability.
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 *
 	 * @return 'edit_theme_options' capability
 	 */
@@ -59,7 +59,7 @@
 	/**
 	 * Helper function for returning 'manage_options' capability.
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 *
 	 * @return 'manage_options' capability
 	 */
@@ -71,7 +71,7 @@
 	/**
 	 * Helper function for returning 'install_plugins' capability.
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 *
 	 * @return 'install_plugins' capability
 	 */
@@ -86,8 +86,7 @@
 /**
  * Helper functions for returning custom icons.
  *
- * @since 1.2
- * @version 1.3
+ * @since 1.2.0
  *
  * @return string URL for custom icon image
  */
@@ -95,7 +94,7 @@
 	 * Helper function for returning a custom icon (icon-tbb.png)
 	 * from stylesheet/child theme "images" folder.
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 *
 	 * @return tbb custom icon
 	 */
@@ -107,7 +106,7 @@
 	/**
 	 * Helper function for returning the iThemes Builder icon
 	 *
-	 * @since 1.3
+	 * @since 1.3.0
 	 *
 	 * @return tbb ithemes builder icon
 	 */
@@ -119,7 +118,7 @@
 	/**
 	 * Helper function for returning the alternate iThemes Builder icon
 	 *
-	 * @since 1.3
+	 * @since 1.3.0
 	 *
 	 * @return tbb alternate ithemes builder icon
 	 */
@@ -131,7 +130,7 @@
 	/**
 	 * Helper function for returning the PluginBuddy Brand icon
 	 *
-	 * @since 1.3
+	 * @since 1.3.0
 	 *
 	 * @return tbb pluginbuddy brand icon
 	 */
@@ -143,7 +142,7 @@
 	/**
 	 * Helper function for returning the alternate PluginBuddy Brand icon
 	 *
-	 * @since 1.3
+	 * @since 1.3.0
 	 *
 	 * @return tbb alternate pluginbuddy brand icon
 	 */
@@ -155,7 +154,7 @@
 	/**
 	 * Helper function for returning the DisplayBuddy icon
 	 *
-	 * @since 1.3
+	 * @since 1.3.0
 	 *
 	 * @return tbb displaybuddy icon
 	 */
@@ -167,7 +166,7 @@
 	/**
 	 * Helper function for returning the LoopBuddy icon
 	 *
-	 * @since 1.3
+	 * @since 1.3.0
 	 *
 	 * @return tbb loopbuddy icon
 	 */
@@ -179,7 +178,7 @@
 	/**
 	 * Helper function for returning the BackupBuddy icon
 	 *
-	 * @since 1.3
+	 * @since 1.3.0
 	 *
 	 * @return tbb backupbuddy icon
 	 */
@@ -194,14 +193,14 @@
 /**
  * Helper functions for returning icon class.
  *
- * @since 1.2
+ * @since 1.2.0
  *
  * @return icon class
  */
 	/**
 	 * Helper function for returning no icon class.
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 *
 	 * @return no icon class
 	 */

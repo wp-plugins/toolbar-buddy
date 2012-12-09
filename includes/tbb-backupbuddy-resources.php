@@ -3,18 +3,21 @@
  * Display resource links for active BackupBuddy 2.x/3.x plugin.
  *
  * @package    Toolbar Buddy
- * @subpackage PluginBuddy Plugins Support
+ * @subpackage iThemes Plugins Support
  * @author     David Decker - DECKERWEB
  * @copyright  Copyright 2012, David Decker - DECKERWEB
  * @license    http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link       http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
- * @link       http://twitter.com/#!/deckerweb
+ * @link       http://twitter.com/deckerweb
  *
- * @since 1.0
- * @version 1.1
+ * @since 1.0.0
  */
 
-/** BackupBuddy Support & Docs section */
+/**
+ * BackupBuddy Support & Docs section
+ *
+ * @since 1.0.0
+ */
 $menu_items['irsbackupbgroup'] = array(
 	'parent' => $iresourcegroup,
 	'title'  => __( 'BackupBuddy Support &amp; Docs', 'toolbar-buddy' ),
@@ -70,3 +73,22 @@ $menu_items['irsbackupbgroup'] = array(
 		'href'   => esc_url( TBB_VTUTORIALS_BACKUPBUDDY ),
 		'meta'   => array( 'title' => _x( 'BackupBuddy Video Tutorials (YouTube Search)', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 	);
+
+
+/**
+ * iThemes Stashboard - BackupBuddy Backup Destination.
+ *
+ * @since 1.4.0
+ */
+$menu_items['backupbuddytools-stashboard'] = array(
+	'parent' => $backupbuddyrun,
+	'title'  => __( 'My Stash Board', 'toolbar-buddy' ),
+	'href'   => esc_url_raw( 'http://ithemes.com/member/stash.php' ),
+	'meta'   => array( 'title' => _x( 'My Stashboard for BackupBuddy Stash - Remote Destination', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+);
+$menu_items['ibuddymembers-stashboard'] = array(
+	'parent' => $ibuddymembers,
+	'title'  => __( 'My Stash Board', 'toolbar-buddy' ),
+	'href'   => esc_url_raw( 'http://ithemes.com/member/stash.php' ),
+	'meta'   => array( 'title' => _x( 'My Stashboard for BackupBuddy Stash - Remote Destination', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+);

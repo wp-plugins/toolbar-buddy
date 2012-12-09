@@ -2,17 +2,17 @@
 /**
  * Main plugin file.
  * This plugin adds useful admin links and resources for iThemes Builder
- * and popular PluginBuddy plugins to the WordPress Toolbar / Admin Bar.
+ * and popular iThemes/PluginBuddy Plugins to the WordPress Toolbar / Admin Bar.
  *
  * @package   Toolbar Buddy
  * @author    David Decker
- * @link      http://twitter.com/#!/deckerweb
+ * @link      http://twitter.com/deckerweb
  * @copyright Copyright 2012, David Decker - DECKERWEB
  *
  * Plugin Name: Toolbar Buddy
  * Plugin URI: http://genesisthemes.de/en/wp-plugins/toolbar-buddy/
- * Description: This plugin adds useful admin links and resources for iThemes Builder and popular PluginBuddy plugins to the WordPress Toolbar / Admin Bar.
- * Version: 1.3.2
+ * Description: This plugin adds useful admin links and resources for iThemes Builder and popular iThemes/PluginBuddy Plugins to the WordPress Toolbar / Admin Bar.
+ * Version: 1.4.0
  * Author: David Decker - DECKERWEB
  * Author URI: http://deckerweb.de/
  * License: GPLv2 or later
@@ -43,8 +43,7 @@
 /**
  * Setting constants
  *
- * @since 1.0
- * @version 1.2
+ * @since 1.0.0
  */
 /** Plugin directory */
 define( 'TBB_PLUGIN_DIR', dirname( __FILE__ ) );
@@ -63,8 +62,7 @@ add_action( 'init', 'ddw_tbb_init' );
  * Load the text domain for translation of the plugin.
  * Load admin helper functions - only within 'wp-admin'.
  * 
- * @since 1.0
- * @version 1.1
+ * @since 1.0.0
  */
 function ddw_tbb_init() {
 
@@ -117,6 +115,10 @@ function ddw_tbb_init() {
 		define( 'TBB_DE_DISPLAY', TRUE );
 	}
 
+	if ( ! defined( 'TBB_MULTISITE_EXTRAS_ADMIN' ) ) {
+		define( 'TBB_MULTISITE_EXTRAS_ADMIN', FALSE );
+	}
+
 }  // end of function ddw_tbb_init
 
 
@@ -124,8 +126,7 @@ add_action( 'admin_bar_menu', 'ddw_tbb_admin_bar_menu', 98 );
 /**
  * Add new menu items to the WordPress Toolbar / Admin Bar.
  * 
- * @since 1.0
- * @version 1.1
+ * @since 1.0.0
  *
  * @global mixed $wp_admin_bar, $tbb_builder_active, $tbb_loopbuddy_active, $tbb_backupbuddy_active
  */
@@ -138,7 +139,7 @@ function ddw_tbb_admin_bar_menu() {
 	 *
 	 * Default role: 'edit_posts' (we need this for Builders content blocks stuff...)
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 */
 	$tbb_filter_capability = apply_filters( 'tbb_filter_capability_all', 'edit_posts' );
 
@@ -146,15 +147,15 @@ function ddw_tbb_admin_bar_menu() {
 	 * Required WordPress cabability to display new admin bar entry
 	 * Only showing items if toolbar / admin bar is activated and user is logged in!
 	 *
-	 * @since 1.0
-	 * @version 1.1
+	 * @since 1.0.0
 	 */
-	if ( ! is_user_logged_in() || 
-		! is_admin_bar_showing() || 
-		! current_user_can( $tbb_filter_capability ) ||  // allows for custom filtering the required role/capability
-		! TBB_ALL_DISPLAY  // allows for custom disabling
-	)
+	if ( ! is_user_logged_in()
+		|| ! is_admin_bar_showing()
+		|| ! current_user_can( $tbb_filter_capability )		// allows for custom filtering the required role/capability
+		|| ! TBB_ALL_DISPLAY		// allows for custom disabling
+	) {
 		return;
+	}
 
 	/** Set unique prefix */
 	$prefix = 'ddw-ibuddy-';
@@ -191,6 +192,7 @@ function ddw_tbb_admin_bar_menu() {
 	$displaybgroup = $prefix . 'displaybgroup';				// sub level: group root - displaybuddy
 		$displaybuddystart = $prefix . 'displaybuddystart';		// sub level: displaybuddy start/modules
 			$dpbaccordion = $prefix . 'dpbaccordion';			// third level: accordion
+			$dpbboombar = $prefix . 'dpbboombar';				// third level: boombar
 	$irsdisplaybgroup = $prefix . 'irsdisplaybgroup';			// sub level: builder resource group
 			$displaybuddysupport = $prefix . 'displaybuddysupport';		// third level: displaybuddy support
 			$displaybuddydocs = $prefix . 'displaybuddydocs';		// third level: displaybuddy docs
@@ -236,19 +238,24 @@ function ddw_tbb_admin_bar_menu() {
 
 
 	/** Check for active DisplayBuddy plugin(s) and capabilities */
-	if ( TBB_DISPLAYBUDDY_DISPLAY && 
-		( ( class_exists( 'pluginbuddy_accordion' ) ||
-			class_exists( 'iThemesBillboard' ) ||
-			class_exists( 'pluginbuddy_carousel' ) ||
-			class_exists( 'PluginBuddyCopiousComments' ) ||
-			class_exists( 'PluginBuddyFeaturedPosts' ) ||
-			class_exists( 'iThemesRotatingImages' ) ||
-			class_exists( 'rotatingtext' ) ||
-			class_exists( 'pb_slides' ) ||
-			class_exists( 'pluginbuddy_slideshow' ) ||
-			class_exists( 'pluginbuddy_tipsy' ) ||
-			class_exists( 'PluginBuddyVideoShowcase' ) ) 
-			&& current_user_can( 'edit_posts' ) ) 
+	if ( TBB_DISPLAYBUDDY_DISPLAY
+		&& (
+			(
+				class_exists( 'pluginbuddy_accordion' )
+				|| class_exists( 'IT_Boom_Bar' )
+				|| class_exists( 'iThemesBillboard' )
+				|| class_exists( 'pluginbuddy_carousel' )
+				|| class_exists( 'PluginBuddyCopiousComments' )
+				|| class_exists( 'PluginBuddyFeaturedPosts' )
+				|| class_exists( 'iThemesRotatingImages' )
+				|| class_exists( 'rotatingtext' )
+				|| class_exists( 'pb_slides' )
+				|| class_exists( 'pluginbuddy_slideshow' )
+				|| class_exists( 'pluginbuddy_tipsy' )
+				|| class_exists( 'PluginBuddyVideoShowcase' )
+			) 
+			&& current_user_can( 'edit_posts' )
+		) 
 	) {
 
 		$tbb_displaybuddy_active = 'tbb_active_mode';
@@ -282,7 +289,12 @@ function ddw_tbb_admin_bar_menu() {
 	if ( TBB_BACKUPBUDDY_DISPLAY ) {
 
 		/** Check for BackupBuddy 3.x stuff */
-		if ( class_exists( 'pb_backupbuddy' ) && current_user_can( 'administrator' ) ) {
+		if ( class_exists( 'pb_backupbuddy' )
+			&& (
+				( is_multisite() && current_user_can( 'manage_network' ) )
+				|| ( ! is_multisite() && current_user_can( 'administrator' ) )
+			)
+		) {
 
 			$tbb_backupbuddy_active = 'tbb_active_mode';
 
@@ -291,10 +303,12 @@ function ddw_tbb_admin_bar_menu() {
 		}
 
 		/** Otherwise check for BackupBuddy 2.x stuff */
-		elseif ( class_exists( 'pluginbuddy_backupbuddy' ) && ( 
-							( is_multisite() && current_user_can( 'manage_sites' ) ) || 
-							( ! is_multisite() && current_user_can( 'administrator' ) ) 
-		) ) {
+		elseif ( class_exists( 'pluginbuddy_backupbuddy' )
+			&& ( 
+				( is_multisite() && current_user_can( 'manage_sites' ) )
+				|| ( ! is_multisite() && current_user_can( 'administrator' ) ) 
+			)
+		) {
 
 			$tbb_backupbuddy_active = 'tbb_active_mode';
 
@@ -327,7 +341,7 @@ function ddw_tbb_admin_bar_menu() {
 		 * Action Hook 'tbb_custom_ithemes_group_items'
 		 * allows for hooking other iThemes Group items in
 		 *
-		 * @since 1.2
+		 * @since 1.2.0
 		 */
 		do_action( 'tbb_custom_ithemes_group_items' );
 
@@ -342,7 +356,7 @@ function ddw_tbb_admin_bar_menu() {
 		 * Action Hook 'tbb_custom_displaybuddy_group_items'
 		 * allows for hooking other DisplayBuddy Group items in
 		 *
-		 * @since 1.2
+		 * @since 1.2.0
 		 */
 		do_action( 'tbb_custom_displaybuddy_group_items' );
 
@@ -357,7 +371,7 @@ function ddw_tbb_admin_bar_menu() {
 		 * Action Hook 'tbb_custom_loopbuddy_group_items'
 		 * allows for hooking other LoopBuddy Group items in
 		 *
-		 * @since 1.2
+		 * @since 1.2.0
 		 */
 		do_action( 'tbb_custom_loopbuddy_group_items' );
 
@@ -372,13 +386,13 @@ function ddw_tbb_admin_bar_menu() {
 		 * Action Hook 'tbb_custom_backupbuddy_group_items'
 		 * allows for hooking other BackupBuddy Group items in
 		 *
-		 * @since 1.2
+		 * @since 1.2.0
 		 */
 		do_action( 'tbb_custom_backupbuddy_group_items' );
 
 
 	/**
-	 * Display these items also if iThemes Builder or PluginBuddy plugins are not installed
+	 * Display these items also if iThemes Builder or iThemes/PluginBuddy plugins are not installed
 	 * iBuddy HQ menu items
 	 */
 	if ( TBB_RESOURCES_DISPLAY ) {
@@ -391,36 +405,67 @@ function ddw_tbb_admin_bar_menu() {
 
 	/** Display language specific links only for these locales: de_DE, de_AT, de_CH, de_LU */
 	if ( TBB_DE_DISPLAY && ( get_locale() == 'de_DE' || get_locale() == 'de_AT' || get_locale() == 'de_CH' || get_locale() == 'de_LU' ) ) {
-		/** German iThemes & PluginBuddy language packs */
+		/** German iThemes & iThemes Plugins/PluginBuddy language packs */
 		$iresourcegroup_menu_items['languages-de'] = array(
 			'parent' => $iresourcegroup,
 			'title'  => __( 'German language files', 'toolbar-buddy' ),
 			'href'   => 'http://deckerweb.de/material/sprachdateien/ithemes-und-pluginbuddy/',
-			'meta'   => array( 'title' => _x( 'German language files for iThemes Builder Framework and PluginBuddy Plugins', 'Translators: For the tooltip', 'toolbar-buddy' ) )
+			'meta'   => array( 'title' => _x( 'German language files for iThemes Builder Framework and iThemes Plugins', 'Translators: For the tooltip', 'toolbar-buddy' ) )
 		);
 	}  // end-if German locales
 
 
 	/** Allow menu items to be filtered, but pass in parent menu item IDs */
-	$menu_items = (array) apply_filters( 'ddw_tbb_menu_items',
-					$menu_items, $iresourcegroup_menu_items, $prefix, $ibuddybar, $ibuddyblogs, $ibuddytutorials, 
-						$ibuddyfaqs, $ibuddymembers, 
-					$ithemesgroup, $buildersettings, $builderlayouts, $buildercontent, $builderblocksgroup,  							$builderblockevents, $bblockevents, $bblockvenues, $builderblockchurch, $bblocksermons, 
-						$bblockstaff, $builderblockrestaurant, $bblockmenus, $bblocklocations, $buildersupport, 
-						$builderdocs, 
-					$backupbgroup, $backupbuddyrun, $backupbuddytools, $backupbuddysupport, $backupbuddydocs, 
-					$loopbgroup, $loopbuddysettings, $loopbuddyedit, 
-					$displaybgroup, $displaybuddystart, $dpbaccordion, $displaybuddysupport, $displaybuddydocs, 
-					$ibuddysites, $iresourcegroup, 
-					$irsbuildergroup, $irsbackupbgroup, $irsloopbgroup, $irsdisplaybgroup
+	$menu_items = (array) apply_filters( 'ddw_tbb_menu_items', $menu_items,
+									$iresourcegroup_menu_items,
+									$prefix,
+									$ibuddybar,
+									$ibuddyblogs,
+									$ibuddytutorials,
+									$ibuddyfaqs,
+									$ibuddymembers,
+									$ithemesgroup,
+										$buildersettings,
+										$builderlayouts,
+										$buildercontent,
+										$builderblocksgroup, 											$builderblockevents,
+										$bblockevents,
+										$bblockvenues,
+										$builderblockchurch,
+										$bblocksermons,
+										$bblockstaff,
+										$builderblockrestaurant,
+										$bblockmenus,
+										$bblocklocations,
+										$buildersupport,
+										$builderdocs,
+									$backupbgroup,
+									$backupbuddyrun,
+									$backupbuddytools,
+									$backupbuddysupport,
+									$backupbuddydocs,
+										$loopbgroup,
+										$loopbuddysettings,
+										$loopbuddyedit,
+									$displaybgroup,
+									$displaybuddystart,
+									$dpbaccordion,
+									$dpbboombar,
+									$displaybuddysupport,
+									$displaybuddydocs,
+										$ibuddysites,
+										$iresourcegroup,
+										$irsbuildergroup,
+										$irsbackupbgroup,
+										$irsloopbgroup,
+										$irsdisplaybgroup
 	);  // end of array
 
 
 	/**
 	 * Add the iBuddy top-level menu item
 	 *
-	 * @since 1.0
-	 * @version 1.1
+	 * @since 1.0.0
 	 *
 	 * @param $tbb_main_item_title
 	 * @param $tbb_main_item_title_tooltip
@@ -504,7 +549,7 @@ function ddw_tbb_admin_bar_menu() {
 	 * Action Hook 'tbb_custom_iresource_group_items'
 	 * allows for hooking other iResource Group items in
 	 *
-	 * @since 1.2
+	 * @since 1.2.0
 	 */
 	do_action( 'tbb_custom_iresource_group_items' );
 
@@ -516,14 +561,17 @@ add_action( 'admin_head', 'ddw_tbb_admin_style' );
 /**
  * Add the styles for new WordPress Toolbar / Admin Bar entry
  * 
- * @since 1.0
- * @version 1.1
+ * @since 1.0.0
  */
 function ddw_tbb_admin_style() {
 
 	/** No styles if admin bar is disabled or user is not logged in or items are disabled via constant */
-	if ( ! is_admin_bar_showing() || ! is_user_logged_in() || ! TBB_ALL_DISPLAY )
+	if ( ! is_admin_bar_showing()
+		|| ! is_user_logged_in()
+		|| ! TBB_ALL_DISPLAY
+	) {
 		return;
+	}
 
 	/** Add CSS styles to wp_head/admin_head */
 	$tbb_main_icon = apply_filters( 'tbb_filter_main_icon', plugins_url( 'toolbar-buddy/images/icon-ibuddy.png',
@@ -559,7 +607,34 @@ dirname( __FILE__ ) ) );
 /**
  * Helper functions for custom branding of the plugin
  *
- * @since 1.2
+ * @since 1.2.0
  */
 	/** Include plugin file with special custom stuff */
 	require_once( TBB_PLUGIN_DIR . '/includes/tbb-branding.php' );
+
+
+/**
+ * Returns current plugin's header data in a flexible way.
+ *
+ * @since 1.4.0
+ *
+ * @uses get_plugins()
+ *
+ * @param $tbb_plugin_value
+ * @param $tbb_plugin_folder
+ * @param $tbb_plugin_file
+ *
+ * @return string Plugin version
+ */
+function ddw_tbb_plugin_get_data( $tbb_plugin_value ) {
+
+	if ( ! function_exists( 'get_plugins' ) ) {
+		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	}
+
+	$tbb_plugin_folder = get_plugins( '/' . plugin_basename( dirname( __FILE__ ) ) );
+	$tbb_plugin_file = basename( ( __FILE__ ) );
+
+	return $tbb_plugin_folder[ $tbb_plugin_file ][ $tbb_plugin_value ];
+
+}  // end of function ddw_tbb_plugin_get_data
