@@ -1,0 +1,846 @@
+# This file is distributed under the same license as the Toolbar Buddy package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2012-12-09 19:46:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Toolbar Buddy\n"
+
+#: includes/tbb-displaybuddy.php:77 includes/tbb-displaybuddy.php:79
+msgid "DisplayBuddy"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:176 includes/tbb-displaybuddy.php:178
+msgid "Boom Bars"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:183 includes/tbb-displaybuddy.php:185
+msgid "Add new Boom Bar"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:193 includes/tbb-displaybuddy.php:195
+msgid "BoomBar Forum"
+msgstr ""
+
+#: includes/tbb-iresources.php:91 includes/tbb-iresources.php:93
+msgid "Plugin Tutorials"
+msgstr ""
+
+#: includes/tbb-iresources.php:133 includes/tbb-iresources.php:135
+msgid "Free iThemes plugins"
+msgstr ""
+
+#: includes/tbb-iresources.php:143
+msgctxt "Translators: For the tooltip"
+msgid "iThemes Builder and Plugin News Planet (official and community news via FriendFeed service)"
+msgstr ""
+
+#: toolbar-buddy.php:0
+msgid "This plugin adds useful admin links and resources for iThemes Builder and popular iThemes/PluginBuddy Plugins to the WordPress Toolbar / Admin Bar."
+msgstr ""
+
+#: toolbar-buddy.php:0
+msgid "1.4.0"
+msgstr ""
+
+#: toolbar-buddy.php:413
+msgctxt "Translators: For the tooltip"
+msgid "German language files for iThemes Builder Framework and iThemes Plugins"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:87
+#: includes/tbb-backupbuddy-resources.php:93
+msgctxt "Translators: For the tooltip"
+msgid "My Stashboard for BackupBuddy Stash - Remote Destination"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:85
+#: includes/tbb-backupbuddy-resources.php:91
+msgid "My Stash Board"
+msgstr ""
+
+#: includes/tbb-admin.php:106
+msgid "Translations"
+msgstr ""
+
+#: includes/tbb-backupbuddy.php:132 includes/tbb-backupbuddy.php:179
+msgid "Export Site"
+msgstr ""
+
+#: includes/tbb-backupbuddy.php:134 includes/tbb-backupbuddy.php:181
+msgctxt "Translators: For the tooltip"
+msgid "Export Site"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:51
+#: includes/tbb-backupbuddy-resources.php:53
+msgid "BackupBuddy 3.0 Beta Testing"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:72
+#: includes/tbb-ithemesbuilder.php:203 includes/tbb-loopbuddy.php:85
+msgid "Video Tutorials"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:74
+msgctxt "Translators: For the tooltip"
+msgid "BackupBuddy Video Tutorials (YouTube Search)"
+msgstr ""
+
+#: includes/tbb-backupbuddy.php:88 includes/tbb-backupbuddy.php:171
+msgctxt "Translators: For the tooltip"
+msgid "Manage Remote Destinations &amp; Archives"
+msgstr ""
+
+#: includes/tbb-backupbuddy.php:92 includes/tbb-backupbuddy.php:94
+msgid "Migrate &amp; Restore"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:205
+msgctxt "Translators: For the tooltip"
+msgid "Builder Video Tutorials (YouTube Search)"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:87
+msgctxt "Translators: For the tooltip"
+msgid "LoopBuddy Video Tutorials (YouTube Search)"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:51 includes/tbb-backupbuddy-2x.php:53
+#: includes/tbb-backupbuddy.php:24 includes/tbb-backupbuddy.php:26
+msgid "BackupBuddy Tools"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:57 includes/tbb-backupbuddy-2x.php:59
+#: includes/tbb-backupbuddy.php:35 includes/tbb-backupbuddy.php:37
+msgid "BackupBuddy Settings"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:63 includes/tbb-backupbuddy-2x.php:65
+#: includes/tbb-backupbuddy.php:41 includes/tbb-backupbuddy.php:43
+msgid "Scheduling"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:69 includes/tbb-backupbuddy-2x.php:71
+#: includes/tbb-backupbuddy.php:47 includes/tbb-backupbuddy.php:49
+#: includes/tbb-backupbuddy.php:161 includes/tbb-backupbuddy.php:163
+msgid "Run Malware Scan"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:75 includes/tbb-backupbuddy-2x.php:77
+#: includes/tbb-backupbuddy.php:53 includes/tbb-backupbuddy.php:55
+msgid "Web Server Info"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:81 includes/tbb-backupbuddy-2x.php:83
+#: includes/tbb-backupbuddy.php:59 includes/tbb-backupbuddy.php:61
+msgid "BackupBuddy: Getting Started"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:90 includes/tbb-backupbuddy-2x.php:92
+#: includes/tbb-backupbuddy.php:68 includes/tbb-backupbuddy.php:70
+msgid "Backup &amp; Restore"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:96 includes/tbb-backupbuddy-2x.php:98
+#: includes/tbb-backupbuddy.php:74 includes/tbb-backupbuddy.php:76
+msgid "Run Database Backup"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:102 includes/tbb-backupbuddy-2x.php:104
+#: includes/tbb-backupbuddy.php:80 includes/tbb-backupbuddy.php:82
+msgid "Run FULL Backup"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:108 includes/tbb-backupbuddy-2x.php:110
+#: includes/tbb-backupbuddy.php:86 includes/tbb-backupbuddy.php:169
+msgid "Edit external Destinations"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:23
+msgid "BackupBuddy Support &amp; Docs"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:25
+msgctxt "Translators: For the tooltip"
+msgid "BackupBuddy Support &amp; Docs"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:31
+#: includes/tbb-backupbuddy-resources.php:33
+msgid "BackupBuddy Support"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:37
+#: includes/tbb-backupbuddy-resources.php:39
+msgid "BackupBuddy Forum"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:43
+#: includes/tbb-backupbuddy-resources.php:45
+msgid "BackupBuddy Multisite Forum"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:60
+msgid "BackupBuddy Codex"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:62
+msgctxt "Translators: For the tooltip"
+msgid "BackupBuddy Codex &amp; Documentation"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:66
+msgid "Multisite Documentation"
+msgstr ""
+
+#: includes/tbb-backupbuddy-resources.php:68
+msgctxt "Translators: For the tooltip"
+msgid "Multisite Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:77 includes/tbb-displaybuddy.php:79
+msgid "DisplayBuddy Start"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:90
+msgid "Accordions"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:92
+msgctxt "Translators: For the tooltip"
+msgid "Accordions"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:96 includes/tbb-displaybuddy.php:98
+msgid "Add new Accordion"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:108 includes/tbb-displaybuddy.php:110
+msgid "Accordion Settings"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:118 includes/tbb-displaybuddy.php:120
+msgid "Accordion Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:126 includes/tbb-displaybuddy.php:128
+msgid "Accordion Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:142 includes/tbb-displaybuddy.php:144
+msgid "Billboard"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:152 includes/tbb-displaybuddy.php:154
+msgid "Billboard Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:160 includes/tbb-displaybuddy.php:162
+msgid "Billboard Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:212 includes/tbb-displaybuddy.php:214
+msgid "Carousel"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:222 includes/tbb-displaybuddy.php:224
+msgid "Carousel Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:230 includes/tbb-displaybuddy.php:232
+msgid "Carousel Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:246 includes/tbb-displaybuddy.php:248
+msgid "CopiusComments"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:256 includes/tbb-displaybuddy.php:258
+msgid "CopiusComments Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:264 includes/tbb-displaybuddy.php:266
+msgid "CopiusComments Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:280 includes/tbb-displaybuddy.php:282
+msgid "Featured Posts"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:290 includes/tbb-displaybuddy.php:292
+msgid "Featured Posts Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:298 includes/tbb-displaybuddy.php:300
+msgid "Featured Posts Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:314 includes/tbb-displaybuddy.php:316
+msgid "Rotating Images"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:324 includes/tbb-displaybuddy.php:326
+msgid "Rotating Images Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:332 includes/tbb-displaybuddy.php:334
+msgid "Rotating Images Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:348 includes/tbb-displaybuddy.php:350
+msgid "Rotating Text"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:358 includes/tbb-displaybuddy.php:360
+msgid "Rotating Text Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:366 includes/tbb-displaybuddy.php:368
+msgid "Rotating Text Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:382 includes/tbb-displaybuddy.php:384
+msgid "Slides"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:391 includes/tbb-displaybuddy.php:393
+msgid "Slides: Getting Started"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:401 includes/tbb-displaybuddy.php:403
+msgid "Slides: Settings"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:413 includes/tbb-displaybuddy.php:415
+msgid "Slides Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:421 includes/tbb-displaybuddy.php:423
+msgid "Slides Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:437 includes/tbb-displaybuddy.php:439
+msgid "Slideshow"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:447 includes/tbb-displaybuddy.php:449
+msgid "Slideshow Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:455 includes/tbb-displaybuddy.php:457
+msgid "Slideshow Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:471 includes/tbb-displaybuddy.php:473
+msgid "Tipsy"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:481 includes/tbb-displaybuddy.php:483
+msgid "Tipsy Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:489 includes/tbb-displaybuddy.php:491
+msgid "Tipsy Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:505 includes/tbb-displaybuddy.php:507
+msgid "Video Showcase"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:515 includes/tbb-displaybuddy.php:517
+msgid "Video Showcase Forum"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:523 includes/tbb-displaybuddy.php:525
+msgid "Video Showcase Documentation"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:534
+msgid "DisplayBuddy Support &amp; Docs"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:536
+msgctxt "Translators: For the tooltip"
+msgid "DisplayBuddy Support &amp; Docs"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:542 includes/tbb-displaybuddy.php:544
+msgid "DisplayBuddy Support"
+msgstr ""
+
+#: includes/tbb-displaybuddy.php:551 includes/tbb-displaybuddy.php:553
+msgid "DisplayBuddy Codex"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:61 includes/tbb-ithemesbuilder.php:63
+msgid "Builder Settings"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:67 includes/tbb-ithemesbuilder.php:69
+msgid "Builder Menus"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:73 includes/tbb-ithemesbuilder.php:75
+msgid "Import &amp; Export"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:79 includes/tbb-ithemesbuilder.php:81
+msgid "Builder: Getting Started"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:94 includes/tbb-ithemesbuilder.php:96
+msgid "Views"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:105 includes/tbb-ithemesbuilder.php:107
+msgid "Manage Content"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:120 includes/tbb-ithemesbuilder.php:122
+msgid "Builder Widgets"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:128 includes/tbb-ithemesbuilder.php:130
+msgid "All Widget Content"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:134 includes/tbb-ithemesbuilder.php:136
+msgid "Add new Widget Content"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:145
+msgid "Builder Support &amp; Docs"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:147
+msgctxt "Translators: For the tooltip"
+msgid "Builder Support &amp; Docs"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:153 includes/tbb-ithemesbuilder.php:155
+msgid "Builder Support"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:159 includes/tbb-ithemesbuilder.php:161
+msgid "Builder Forum"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:165 includes/tbb-ithemesbuilder.php:167
+msgid "Builder Plugins Forum"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:171 includes/tbb-ithemesbuilder.php:173
+msgid "Builder Blocks Forum"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:179
+msgid "Builder Codex"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:181
+msgctxt "Translators: For the tooltip"
+msgid "Builder Codex &amp; Documentation"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:185
+msgid "Builder 3.0 Introduction"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:187
+msgctxt "Translators: For the tooltip"
+msgid "Builder 3.0 Introduction"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:191
+msgid "Builder Documentation"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:193
+msgctxt "Translators: For the tooltip"
+msgid "Builder Documentation"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:197
+msgid "Builder Child Themes"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:199
+msgctxt "Translators: For the tooltip"
+msgid "Builder Child Themes"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:227 includes/tbb-ithemesbuilder.php:229
+msgid "Style Manager"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:242 includes/tbb-ithemesbuilder.php:244
+msgid "SEO &amp; Meta"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:321 includes/tbb-ithemesbuilder.php:323
+msgid "Sermons"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:327 includes/tbb-ithemesbuilder.php:329
+msgid "Add new Sermon"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:333 includes/tbb-ithemesbuilder.php:335
+msgid "Sermon Categories"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:339 includes/tbb-ithemesbuilder.php:341
+msgid "Sermon Tags"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:347
+msgid "Staff Members"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:349
+msgctxt "Translators: For the tooltip"
+msgid "Staff Members"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:353 includes/tbb-ithemesbuilder.php:355
+msgid "Add new Staff Member"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:359 includes/tbb-ithemesbuilder.php:361
+msgid "Staff Positions"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:377
+msgid "Menu Items"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:379
+msgctxt "Translators: For the tooltip"
+msgid "Restaurant Menu Items"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:383 includes/tbb-ithemesbuilder.php:385
+msgid "Add new Menu Item"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:389 includes/tbb-ithemesbuilder.php:391
+msgid "Courses"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:395 includes/tbb-ithemesbuilder.php:397
+msgid "Allergies"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:403
+msgid "Locations"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:405
+msgctxt "Translators: For the tooltip"
+msgid "Restaurant Locations"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:409 includes/tbb-ithemesbuilder.php:411
+msgid "Add new Location"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:415
+msgid "Features"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:417
+msgctxt "Translators: For the tooltip"
+msgid "Restaurant Features"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:421
+msgid "Cuisines"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:423
+msgctxt "Translators: For the tooltip"
+msgid "Restaurant Cuisines"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:24 includes/tbb-loopbuddy.php:26
+msgid "LoopBuddy Settings"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:30 includes/tbb-loopbuddy.php:32
+msgid "LoopBuddy: Getting Started"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:38 includes/tbb-loopbuddy.php:40
+msgid "Edit Loops"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:46 includes/tbb-loopbuddy.php:48
+msgid "Query Editor"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:63
+msgid "LoopBuddy Support &amp; Docs"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:65
+msgctxt "Translators: For the tooltip"
+msgid "LoopBuddy Support &amp; Docs"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:71 includes/tbb-loopbuddy.php:73
+msgid "LoopBuddy Support"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:79
+msgid "LoopBuddy Codex"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:81
+msgctxt "Translators: For the tooltip"
+msgid "LoopBuddy Codex &amp; Documentation"
+msgstr ""
+
+#: toolbar-buddy.php:0
+msgid "Toolbar Buddy"
+msgstr ""
+
+#: toolbar-buddy.php:0
+msgid "http://genesisthemes.de/en/wp-plugins/toolbar-buddy/"
+msgstr ""
+
+#: toolbar-buddy.php:0
+msgid "David Decker - DECKERWEB"
+msgstr ""
+
+#: toolbar-buddy.php:0
+msgid "http://deckerweb.de/"
+msgstr ""
+
+#: includes/tbb-admin.php:104
+msgid "FAQ"
+msgstr ""
+
+#: includes/tbb-admin.php:105
+msgid "Support"
+msgstr ""
+
+#: includes/tbb-admin.php:107
+msgid "Donate"
+msgstr ""
+
+#: includes/tbb-iresources.php:17
+msgid "iBuddy HQ"
+msgstr ""
+
+#: includes/tbb-iresources.php:33 includes/tbb-iresources.php:35
+msgid "Official Blog"
+msgstr ""
+
+#: toolbar-buddy.php:411
+msgid "German language files"
+msgstr ""
+
+#: toolbar-buddy.php:475
+msgid "iBuddy"
+msgstr ""
+
+#: toolbar-buddy.php:478
+msgctxt "Translators: For the tooltip"
+msgid "iBuddy"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:88 includes/tbb-ithemesbuilder.php:90
+msgctxt "Translators: Builder Layouts"
+msgid "Layout Editor"
+msgstr ""
+
+#: includes/tbb-loopbuddy.php:54 includes/tbb-loopbuddy.php:56
+msgctxt "Translators: LoopBuddy Layouts"
+msgid "Layout Editor"
+msgstr ""
+
+#: includes/tbb-iresources.php:45 includes/tbb-iresources.php:47
+msgid "WebDesign.com Blog"
+msgstr ""
+
+#: includes/tbb-iresources.php:51
+msgid "The Div Blog"
+msgstr ""
+
+#: includes/tbb-iresources.php:53
+msgctxt "Translators: For the tooltip"
+msgid "The Div Blog (thediv.org)"
+msgstr ""
+
+#: includes/tbb-iresources.php:57
+msgid "Cory Miller Blog"
+msgstr ""
+
+#: includes/tbb-iresources.php:59
+msgctxt "Translators: For the tooltip"
+msgid "Cory Miller Blog (corymiller.com)"
+msgstr ""
+
+#: includes/tbb-iresources.php:63
+msgid "Justin Kopepasah Blog"
+msgstr ""
+
+#: includes/tbb-iresources.php:65
+msgctxt "Translators: For the tooltip"
+msgid "Justin Kopepasah Blog (kopepasah.com)"
+msgstr ""
+
+#: includes/tbb-iresources.php:71
+msgid "iThemesTV"
+msgstr ""
+
+#: includes/tbb-iresources.php:73
+msgctxt "Translators: For the tooltip"
+msgid "iThemesTV - Video-Tutorials &amp; Live Events"
+msgstr ""
+
+#: includes/tbb-iresources.php:79 includes/tbb-iresources.php:81
+msgid "iThemes Tutorials"
+msgstr ""
+
+#: includes/tbb-iresources.php:97 includes/tbb-iresources.php:99
+msgid "Complete Codex"
+msgstr ""
+
+#: includes/tbb-iresources.php:105 includes/tbb-iresources.php:107
+msgid "iThemes FAQ"
+msgstr ""
+
+#: includes/tbb-iresources.php:113 includes/tbb-iresources.php:115
+msgid "Members Area"
+msgstr ""
+
+#: includes/tbb-iresources.php:119 includes/tbb-iresources.php:121
+msgid "Affiliates Area"
+msgstr ""
+
+#: includes/tbb-iresources.php:125 includes/tbb-iresources.php:127
+msgid "Support Forum"
+msgstr ""
+
+#: includes/tbb-iresources.php:141
+msgid "iBuddy News Planet"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:123 includes/tbb-backupbuddy.php:111
+#: includes/tbb-backupbuddy.php:153
+msgid "Multsite Extras"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:125 includes/tbb-backupbuddy.php:113
+#: includes/tbb-backupbuddy.php:155
+msgctxt "Translators: For the tooltip"
+msgid "Multsite Extras"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:131
+msgid "Export Site (Beta)"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:133
+msgctxt "Translators: For the tooltip"
+msgid "Export Site (Beta)"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:139
+msgid "Duplicate Site (Beta)"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:141
+msgctxt "Translators: For the tooltip"
+msgid "Duplicate Site (Beta)"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:152 includes/tbb-backupbuddy.php:120
+msgid "Import Site (Beta)"
+msgstr ""
+
+#: includes/tbb-backupbuddy-2x.php:154 includes/tbb-backupbuddy.php:122
+msgctxt "Translators: For the tooltip"
+msgid "Import Site (Beta)"
+msgstr ""
+
+#: includes/tbb-iresources.php:39 includes/tbb-iresources.php:41
+msgid "Builder Community Blog"
+msgstr ""
+
+#: includes/tbb-iresources.php:85 includes/tbb-iresources.php:87
+msgid "Builder Tutorials"
+msgstr ""
+
+#: includes/tbb-admin.php:48
+msgid "Go to the Builder settings page"
+msgstr ""
+
+#: includes/tbb-admin.php:48
+msgid "Builder"
+msgstr ""
+
+#: includes/tbb-admin.php:55
+msgid "Go to the LoopBuddy settings page"
+msgstr ""
+
+#: includes/tbb-admin.php:55
+msgid "Loops"
+msgstr ""
+
+#: includes/tbb-admin.php:69
+msgid "Go to the BackupBuddy settings page"
+msgstr ""
+
+#: includes/tbb-admin.php:69
+msgid "Backups"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:259 includes/tbb-ithemesbuilder.php:261
+msgid "All Events"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:265 includes/tbb-ithemesbuilder.php:267
+msgid "Add new Event"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:271
+msgid "Start Here"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:273
+msgctxt "Translators: For the tooltip"
+msgid "Start Here - User Guide"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:279 includes/tbb-ithemesbuilder.php:302
+msgid "Settings"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:281
+msgctxt "Translators: For the tooltip"
+msgid "Settings for Events"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:288
+msgid "All Venues"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:290
+msgctxt "Translators: For the tooltip"
+msgid "All Venues - Event Locations"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:294 includes/tbb-ithemesbuilder.php:296
+msgid "Add new Venue"
+msgstr ""
+
+#: includes/tbb-ithemesbuilder.php:304
+msgctxt "Translators: For the tooltip"
+msgid "Settings for Venues"
+msgstr ""
